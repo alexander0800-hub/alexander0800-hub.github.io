@@ -409,3 +409,58 @@ section[id] { scroll-margin-top: 76px; }
 .gallery-grid img { height: auto; aspect-ratio: 16 / 9; }
 .gallery-grid figure.wide img { aspect-ratio: 32 / 9; }
 @media (max-width: 760px) { .gallery-grid figure.wide img { aspect-ratio: 16 / 9; } }
+
+/* ---- WebPR v1.1: owner feedback – never upscale ingame shots, custom checkboxes ---- */
+/* Native sizes: level/boss shots 958 px wide, cast crops 150 px. Displayed size must stay <= native. */
+img { image-rendering: auto; }
+.feature img, .gallery-grid img, .story img { max-width: 958px; }
+.story img { max-height: 328px; object-fit: cover; }
+.cast img { max-width: 150px; max-height: 150px; }
+.lightbox img { width: auto; height: auto; max-width: min(958px, 100%); max-height: 86vh; }
+
+/* Hero: sharp native screenshot (no scaling) + soft CSS glow behind it instead of a stretched <img> */
+.hero { min-height: 0; padding: clamp(70px, 9vw, 110px) 0 clamp(90px, 11vw, 140px); }
+.hero-bg {
+  background:
+    radial-gradient(900px 480px at 72% 58%, rgba(245,180,83,.55), rgba(245,180,83,0) 70%),
+    linear-gradient(180deg, #d9a860 0%, #b98447 55%, #6d4a2c 100%);
+}
+.hero-shot {
+  position: absolute; right: max(0px, calc((100vw - 1180px) / 2 - 40px)); bottom: 60px;
+  width: 958px; height: 504px; max-width: 100%;
+  background: url("/img/level_poust.webp") center / 958px 504px no-repeat;
+  -webkit-mask-image: radial-gradient(closest-side at 50% 50%, #000 62%, transparent 100%);
+          mask-image: radial-gradient(closest-side at 50% 50%, #000 62%, transparent 100%);
+}
+.hero::before {
+  background:
+    linear-gradient(90deg, rgba(27,31,46,.82) 0%, rgba(27,31,46,.55) 38%, rgba(27,31,46,.08) 70%, rgba(27,31,46,0) 100%),
+    linear-gradient(180deg, rgba(27,31,46,.25) 0%, rgba(27,31,46,0) 40%, rgba(27,31,46,0) 78%, var(--paper) 100%);
+}
+@media (max-width: 980px) {
+  .hero-shot { right: 50%; transform: translateX(50%); bottom: 40px; max-width: none; }
+  .hero::before { background: linear-gradient(180deg, rgba(27,31,46,.45) 0%, rgba(27,31,46,.72) 60%, var(--paper) 100%); }
+}
+
+/* Checkbox component: <label class="check"><input type="checkbox"><span>text</span></label> */
+.consents { border: 0; margin: 0 0 1.6rem; padding: clamp(1.1rem, 3vw, 1.6rem) clamp(1.1rem, 3vw, 1.8rem); background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); min-width: 0; }
+.consents legend { float: left; width: 100%; padding: 0; margin: 0 0 .9rem; font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; color: var(--bark); }
+.consents legend + * { clear: both; }
+.check { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); column-gap: .85rem; align-items: start; margin: 0; padding: .7rem 0; line-height: 1.55; color: var(--ink); border-top: 1px solid #f1e3cf; }
+.check:first-of-type { border-top: 0; padding-top: 0; }
+.check input {
+  appearance: none; -webkit-appearance: none; margin: .1rem 0 0; width: 1.5rem; height: 1.5rem;
+  border: 2px solid var(--clay); border-radius: 7px; background: #fff; display: grid; place-content: center; cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.check input::before {
+  content: ""; width: .85rem; height: .85rem; background: #fff; transform: scale(0); transition: transform .12s ease;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.check input:checked { background: var(--sun-deep); border-color: var(--sun-deep); }
+.check input:checked::before { transform: scale(1); }
+.check input:focus-visible { outline: 3px solid var(--sun-deep); outline-offset: 2px; }
+.check input:disabled { cursor: not-allowed; background: #fbf5ec; border-color: #c9b39b; }
+.consents[disabled] .check { color: var(--muted); cursor: default; }
+.lang li a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .6rem; }
+.lang li a[aria-current]::after { content: "✓"; color: var(--sun); }
