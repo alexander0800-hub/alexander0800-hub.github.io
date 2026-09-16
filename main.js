@@ -15,14 +15,19 @@
     };
     toggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
     nav.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || !nav.classList.contains('open')) return;
+      const inside = nav.contains(document.activeElement);
+      setOpen(false);
+      if (inside) toggle.focus(); // WCAG 2.4.3: focus must not stay in a hidden menu
+    });
   }
 
   // Disabled links (demo coming soon) do nothing but stay focusable
   $$('a[aria-disabled="true"]').forEach((a) => a.addEventListener('click', (e) => {
     const target = $('#demo');
     e.preventDefault();
-    if (target && a.getAttribute('href') === '#demo') target.scrollIntoView({ behavior: 'smooth' });
+    if (target && a.getAttribute('href') === '#demo') target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }));
 
   // Reveal on scroll

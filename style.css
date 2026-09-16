@@ -411,7 +411,7 @@ section[id] { scroll-margin-top: 76px; }
 @media (max-width: 760px) { .gallery-grid figure.wide img { aspect-ratio: 16 / 9; } }
 
 /* ---- WebPR v1.1: owner feedback – never upscale ingame shots, custom checkboxes ---- */
-/* Native sizes: level/boss shots 958 px wide, cast crops 150 px. Displayed size must stay <= native. */
+/* Native sizes: level/boss shots 958 px wide, cast crops 300 px (from 4K cards). Displayed size must stay <= native. */
 img { image-rendering: auto; }
 .feature img, .gallery-grid img, .story img { max-width: 958px; }
 .story img { max-height: 328px; object-fit: cover; }
@@ -524,3 +524,18 @@ img { image-rendering: auto; }
 .season-newyear .season-ribbon{background:linear-gradient(90deg,var(--night-2),var(--night),var(--night-2))}
 .season-ribbon::before,.season-ribbon::after{content:"\2744";margin:0 .5em;color:var(--ice)}
 .season-newyear .season-ribbon::before,.season-newyear .season-ribbon::after{content:"\2728";color:var(--sun)}
+
+/* Přístupnost – audit WCAG 2.2 AA / EN 301 549 (16. 9. 2026, tools/check_a11y.mjs) */
+:root { --link: #8a4610; --focus: #7a3e0c; }
+a { color: var(--link); }                                  /* 1.4.3: #e2872f měl na světlém pozadí 2,5–2,7 : 1 */
+:focus-visible { outline-color: var(--focus); }            /* 1.4.11: indikátor fokusu ≥ 3 : 1 (tmavé sekce mají vlastní světlý) */
+.project .state { color: var(--focus); }                   /* 1.4.3: 4,44 → 7+ */
+html { scroll-padding-top: 88px; }                         /* 2.4.11: fokus nesmí zajet pod lepkavou hlavičku */
+@media (max-width: 360px) {                                /* 1.4.10: reflow při 320 CSS px (zoom 400 %) */
+  .site-header .wrap { gap: .35rem; padding-left: 12px; padding-right: 12px; }
+  .header-tools { gap: .15rem; }
+  .lang summary { padding: .45rem .45rem; }
+}
+.project.soon .state { color: #2f6a85; }                  /* 1.4.3: #3f7f9c měl 4,44 : 1 */
+@media (max-width: 360px) { .logo { font-size: 1.1rem; gap: .4rem; } }
+h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá slova (hu „Rendszerkövetelmények“) při 320 px */
