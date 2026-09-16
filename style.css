@@ -517,3 +517,10 @@ img { image-rendering: auto; }
 /* dlouhé URL v kreditech roztahovaly sloupec na mobilu (nález check_mobile.mjs) */
 .legal-layout > * { min-width: 0; }
 .legal article a, .legal article dd, .legal article p { overflow-wrap: anywhere; }
+
+/* Sváteční varianta (site/season.json; zapíná se jen buildem v termínu) */
+.season-ribbon{margin:0;padding:.45rem 16px;text-align:center;font-weight:700;font-size:.95rem;background:var(--night);color:var(--cream)}
+.season-christmas .season-ribbon{background:linear-gradient(90deg,#1b3a2a,var(--night),#1b3a2a)}
+.season-newyear .season-ribbon{background:linear-gradient(90deg,var(--night-2),var(--night),var(--night-2))}
+.season-ribbon::before,.season-ribbon::after{content:"\2744";margin:0 .5em;color:var(--ice)}
+.season-newyear .season-ribbon::before,.season-newyear .season-ribbon::after{content:"\2728";color:var(--sun)}
