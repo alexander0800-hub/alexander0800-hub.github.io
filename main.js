@@ -60,39 +60,5 @@
     });
   }
 
-  // Purchase: payment details appear only after all consents
-  const form = $('#buy-form');
-  const btc = $('#btc-box');
-  if (form && btc) {
-    const LABEL = { home: 'Home – 330 Kč / 17 €', commercial: 'Commercial – 3 300 Kč / 170 €' };
-    const status = $('#buy-status');
-    const mail = $('#btc-mail');
-    const mailBase = mail.getAttribute('href').split('?')[0];
-    const update = () => {
-      const licence = form.elements.licence.value;
-      const ok = $$('input[type="checkbox"]', form).every((c) => c.checked);
-      btc.hidden = !ok;
-      $('#btc-licence').textContent = LABEL[licence];
-      const subject = `ClovicekHD - platba BTC - licence ${licence === 'home' ? 'Home' : 'Commercial'}`;
-      const body = 'txid: \nTyp licence: ' + LABEL[licence] + '\nE-mail pro zaslání klíče: \n';
-      mail.href = `${mailBase}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.textContent = ok ? 'Souhlasy potvrzeny. Platební údaje najdete níže.' : 'Po potvrzení všech souhlasů se zobrazí platební údaje.';
-      status.classList.toggle('ok', ok);
-    };
-    form.addEventListener('change', update);
-    form.addEventListener('submit', (e) => e.preventDefault());
-    $$('a[data-licence]').forEach((a) => a.addEventListener('click', () => {
-      const r = form.querySelector(`input[value="${a.dataset.licence}"]`);
-      if (r) { r.checked = true; update(); }
-    }));
-    update();
-  }
-
-  // Copy BTC address
-  $$('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
-    const text = $(b.dataset.copy).textContent.trim();
-    try { await navigator.clipboard.writeText(text); b.textContent = 'Zkopírováno'; }
-    catch { b.textContent = 'Označte a zkopírujte ručně'; }
-    setTimeout(() => { b.textContent = 'Kopírovat'; }, 2500);
-  }));
+  // Purchase form and BTC copy button were removed until sales start (old code: _nepouzite/main_js_nakup_formular_v0.js).
 })();

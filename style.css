@@ -480,3 +480,40 @@ img { image-rendering: auto; }
 }
 .cast img { object-fit: contain; background: linear-gradient(180deg, #33304a, #1b1f2e); padding: 4px; }
 @media (max-width: 980px) { .hero-bg img { object-position: 60% 45%; } }
+
+/* ---- v1.4: portfolio studia, FAQ, video, tabulka specifikací ---- */
+.projects .flagship { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: .4rem 1.6rem; align-items: center; text-decoration: none; color: inherit; background: #fff; border-top-color: var(--sun-deep); }
+.projects .flagship img { grid-row: 1 / span 3; width: 100%; height: auto; border-radius: 14px; }
+.projects .flagship h3 { font-size: 1.7rem; color: var(--bark); }
+.projects .flagship .state { color: #9a5010; }
+.projects .flagship:hover h3 { color: var(--sun-deep); }
+.coming#nase-hry { padding-top: clamp(40px, 6vw, 72px); }
+.price-tba { font-size: 1.6rem; color: var(--muted); }
+.faq { background: var(--cream); padding-top: 0; }
+.faq-list { display: grid; gap: .8rem; max-width: 860px; }
+.faq-item { background: #fff; border-radius: 16px; box-shadow: var(--shadow); padding: 0 1.3rem; }
+.faq-item summary { cursor: pointer; font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; color: var(--bark); padding: 1rem 0; list-style-position: inside; }
+.faq-item p { margin: 0 0 1.1rem; color: var(--muted); }
+.video { background: var(--cream); padding: clamp(32px, 5vw, 64px) 0; }
+.video-player { width: 100%; max-width: 1920px; height: auto; border-radius: var(--radius); background: #000; }
+.video-placeholder { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); max-width: 960px; }
+.video-placeholder img { width: 100%; height: auto; filter: saturate(.8) brightness(.75); }
+.video-placeholder p { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 1rem 1.3rem; color: #fff; font-weight: 700; background: linear-gradient(180deg, transparent, rgba(0,0,0,.75)); }
+.table-scroll { overflow-x: auto; }
+.spec { border-collapse: collapse; width: 100%; min-width: 420px; }
+.spec th, .spec td { text-align: left; padding: .55rem .8rem; border-bottom: 1px solid #f1e3cf; vertical-align: top; }
+.spec thead th { color: var(--bark); font-family: var(--font-head); }
+@media (max-width: 760px) {
+  .projects .flagship { grid-template-columns: 1fr; }
+  .projects .flagship img { grid-row: auto; }
+}
+.projects .flagship { grid-template-rows: auto; }
+.projects .flagship img { grid-row: auto; }
+.projects .flagship p { font-size: 1.05rem; }
+/* dotykový cíl hamburger menu min. 44×44 px (nález check_mobile.mjs) */
+@media (max-width: 900px) {
+  .nav-toggle { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 10px; }
+}
+/* dlouhé URL v kreditech roztahovaly sloupec na mobilu (nález check_mobile.mjs) */
+.legal-layout > * { min-width: 0; }
+.legal article a, .legal article dd, .legal article p { overflow-wrap: anywhere; }
