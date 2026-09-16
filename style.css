@@ -464,3 +464,4 @@ img { image-rendering: auto; }
 .consents[disabled] .check { color: var(--muted); cursor: default; }
 .lang li a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .6rem; }
 .lang li a[aria-current]::after { content: "✓"; color: var(--sun); }
+.legal-layout.single { grid-template-columns: minmax(0, 1fr); max-width: 900px; }
