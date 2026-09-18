@@ -1,0 +1,222 @@
+/* AlexanderSoft – neveřejná sekce pro betatestery. Vlastní styl (světlý i tmavý motiv),
+   nezávislý na marketingovém style.css: tahle sekce je pracovní nástroj, ne výloha.
+   Kontrasty jsou počítané na WCAG 2.2 AA (text ≥ 4,5:1, velký text a prvky ≥ 3:1). */
+:root {
+  --pozadi: #fffaf1;
+  --pozadi-2: #fff;
+  --pozadi-3: #f4ece0;
+  --text: #2b1d14;
+  --text-tlumeny: #5d4a3c;
+  --ram: #d9c9b6;
+  --akcent: #8a4610;        /* odkazy a primární tlačítko na světlém pozadí */
+  --akcent-text: #fff;
+  --fokus: #7a3e0c;
+  --chyba: #a32020;
+  --chyba-pozadi: #fdeeee;
+  --ok: #1f6b3a;
+  --ok-pozadi: #eaf6ee;
+  --stin: 0 10px 30px rgba(59, 36, 23, .12);
+  --radius: 14px;
+  --font: "Nunito", "Segoe UI", system-ui, sans-serif;
+}
+:root[data-motiv="tmavy"] {
+  --pozadi: #171a25;
+  --pozadi-2: #1f2433;
+  --pozadi-3: #2a3043;
+  --text: #f2ede5;
+  --text-tlumeny: #c3bcb1;
+  --ram: #3c4459;
+  --akcent: #f5b453;        /* na tmavém pozadí smí teplý odstín (kontrast 8,9:1) */
+  --akcent-text: #221a10;
+  --fokus: #f5b453;
+  --chyba: #ff9a92;
+  --chyba-pozadi: #3a2222;
+  --ok: #7fd39b;
+  --ok-pozadi: #1e3328;
+  --stin: 0 10px 30px rgba(0, 0, 0, .45);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-motiv="svetly"]) {
+    --pozadi: #171a25;
+    --pozadi-2: #1f2433;
+    --pozadi-3: #2a3043;
+    --text: #f2ede5;
+    --text-tlumeny: #c3bcb1;
+    --ram: #3c4459;
+    --akcent: #f5b453;
+    --akcent-text: #221a10;
+    --fokus: #f5b453;
+    --chyba: #ff9a92;
+    --chyba-pozadi: #3a2222;
+    --ok: #7fd39b;
+    --ok-pozadi: #1e3328;
+    --stin: 0 10px 30px rgba(0, 0, 0, .45);
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--pozadi);
+  color: var(--text);
+  font: 17px/1.6 var(--font);
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); }
+h3 { font-size: 1.1rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--akcent); }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--fokus); outline-offset: 2px; border-radius: 4px; }
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 10;
+  background: var(--pozadi-2); color: var(--text); padding: .6rem 1rem;
+}
+.skip-link:focus { left: .5rem; top: .5rem; }
+.vizualne-skryte {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Hlavička */
+.hlavicka { background: var(--pozadi-2); border-bottom: 2px solid var(--ram); }
+.hlavicka .wrap {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; padding: .7rem 0;
+}
+.znacka { font-weight: 800; text-decoration: none; color: var(--text); margin-right: auto; }
+.znacka span { display: block; font-size: .78rem; font-weight: 700; color: var(--text-tlumeny); letter-spacing: .06em; text-transform: uppercase; }
+.menu { display: flex; flex-wrap: wrap; gap: .3rem; width: 100%; }
+.menu a {
+  padding: .45rem .8rem; border-radius: 999px; text-decoration: none;
+  color: var(--text); border: 2px solid transparent;
+}
+.menu a:hover { background: var(--pozadi-3); }
+.menu a[aria-current="page"] { border-color: var(--akcent); font-weight: 700; }
+.nastroje { display: flex; align-items: center; gap: .4rem; }
+.nastroje label { font-size: .85rem; color: var(--text-tlumeny); }
+
+/* Spodní lišta: hlavní pohyb po sekci má být na dosah palce (telefon).
+   Na širší obrazovce se schová a vrátí se vodorovné menu v hlavičce. */
+.spodni-lista { position: fixed; inset: auto 0 0 0; z-index: 5;
+  background: var(--pozadi-2); border-top: 2px solid var(--ram);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.spodni-lista ul { display: flex; margin: 0; padding: 0; list-style: none; }
+.spodni-lista li { flex: 1; margin: 0; }
+.spodni-lista a {
+  display: flex; flex-direction: column; align-items: center; gap: .15rem;
+  min-height: 56px; padding: .45rem .3rem; text-decoration: none;
+  color: var(--text); font-size: .82rem; text-align: center; line-height: 1.2;
+}
+.spodni-lista a[aria-current="page"] { color: var(--akcent); font-weight: 800; box-shadow: inset 0 3px 0 var(--akcent); }
+.spodni-lista svg { width: 22px; height: 22px; fill: currentColor; }
+@media (min-width: 48rem) {
+  .spodni-lista { display: none; }
+}
+@media (max-width: 47.99rem) {
+  .menu { display: none; }               /* na telefonu nahrazena spodní lištou */
+  main { padding-bottom: 5.5rem; }       /* ať lišta nepřekrývá obsah */
+  body { font-size: 17px; }              /* pod 16 px iOS zvětšuje a rozbíjí layout */
+}
+
+/* Prvky formulářů */
+main { padding: 2rem 0 3rem; }
+.karta {
+  background: var(--pozadi-2); border: 2px solid var(--ram); border-radius: var(--radius);
+  padding: clamp(1rem, 3vw, 1.6rem); box-shadow: var(--stin); margin-bottom: 1.5rem;
+}
+.karta.uzka { max-width: 30rem; margin-inline: auto; }
+.pole { margin-bottom: 1.1rem; }
+.pole > label, .pole > .popisek { display: block; font-weight: 700; margin-bottom: .3rem; }
+.napoveda { display: block; font-size: .9rem; color: var(--text-tlumeny); margin-bottom: .35rem; }
+.hvezda { color: var(--chyba); }
+input, select, textarea {
+  font: inherit; color: var(--text); background: var(--pozadi);
+  border: 2px solid var(--ram); border-radius: 10px; padding: .55rem .7rem; width: 100%;
+}
+textarea { min-height: 7rem; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { border-color: var(--fokus); }
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--chyba); }
+.chyba-pole { display: block; color: var(--chyba); font-size: .9rem; margin-top: .25rem; font-weight: 700; }
+.radek { display: grid; gap: 0 1rem; }
+@media (min-width: 40rem) { .radek { grid-template-columns: 1fr 1fr; } }
+
+button, .tlacitko {
+  font: inherit; font-weight: 700; cursor: pointer;
+  border: 2px solid transparent; border-radius: 999px; padding: .6rem 1.3rem;
+  background: var(--akcent); color: var(--akcent-text); text-decoration: none; display: inline-block;
+  min-height: 44px;  /* dotykový cíl podle WCAG 2.5.8 s rezervou */
+}
+/* Hlavní akce: na telefonu přes celou šířku a dole, aby na ni dosáhl palec. */
+.hlavni-akce { display: flex; flex-direction: column-reverse; gap: .6rem; margin-top: 1.2rem; }
+.hlavni-akce button { width: 100%; }
+@media (min-width: 40rem) {
+  .hlavni-akce { flex-direction: row; justify-content: flex-start; }
+  .hlavni-akce button { width: auto; }
+}
+button:hover, .tlacitko:hover { filter: brightness(1.08); }
+button[disabled] { opacity: .65; cursor: progress; }
+.tlacitko-vedlejsi, button.vedlejsi {
+  background: transparent; color: var(--text); border-color: var(--ram);
+}
+.tlacitko-mala, button.mala { padding: .3rem .8rem; font-size: .9rem; }
+
+/* Zaškrtávátko s popiskem: celý popisek je klikací cíl (WCAG 2.5.8) */
+.prepinac { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; cursor: pointer; }
+.prepinac input { width: 1.5rem; height: 1.5rem; accent-color: var(--akcent); flex: 0 0 auto; }
+.volby input { width: 1.5rem; height: 1.5rem; }
+
+/* Hlášky */
+.hlaska { border-radius: 10px; padding: .7rem .9rem; margin-bottom: 1rem; font-weight: 700; }
+.hlaska:empty { display: none; }
+.hlaska.chyba { background: var(--chyba-pozadi); color: var(--chyba); border: 2px solid var(--chyba); }
+.hlaska.ok { background: var(--ok-pozadi); color: var(--ok); border: 2px solid var(--ok); }
+
+/* Tabulky – na mobilu se mění na karty */
+table { width: 100%; border-collapse: collapse; }
+caption { text-align: left; color: var(--text-tlumeny); padding-bottom: .5rem; }
+th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--ram); vertical-align: top; }
+th { font-size: .9rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-tlumeny); }
+@media (max-width: 47.99rem) {
+  table, thead, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tr { border: 2px solid var(--ram); border-radius: var(--radius); margin-bottom: .8rem; padding: .4rem .6rem; background: var(--pozadi); }
+  td { border: 0; padding: .35rem 0; display: grid; grid-template-columns: 10rem 1fr; gap: .5rem; }
+  td::before { content: attr(data-popis); font-weight: 700; color: var(--text-tlumeny); }
+}
+.znacka-stav {
+  display: inline-block; padding: .1rem .6rem; border-radius: 999px;
+  background: var(--pozadi-3); font-size: .85rem; font-weight: 700;
+}
+code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; word-break: break-all; }
+
+/* Krokovaný formulář hlášení */
+.krok[hidden] { display: none; }
+.ukazatel { display: flex; align-items: center; gap: .5rem; margin-bottom: 1rem; font-weight: 700; color: var(--text-tlumeny); }
+.ukazatel .body { display: flex; gap: .3rem; }
+.ukazatel .bod { width: 12px; height: 12px; border-radius: 50%; background: var(--ram); }
+.ukazatel .bod.tady { background: var(--akcent); }
+/* Volba kategorie a závažnosti velkými tlačítky, ne rozbalovacím seznamem */
+.volby { display: grid; gap: .5rem; }
+.volby label {
+  display: flex; align-items: center; gap: .7rem; min-height: 48px;
+  padding: .5rem .8rem; border: 2px solid var(--ram); border-radius: 12px; cursor: pointer;
+}
+.volby label:has(input:checked) { border-color: var(--akcent); background: var(--pozadi-3); font-weight: 700; }
+.volby input { width: 1.3rem; height: 1.3rem; accent-color: var(--akcent); flex: 0 0 auto; }
+.prehled { margin: 0; }
+.prehled div { display: grid; grid-template-columns: 11rem 1fr; gap: .4rem; padding: .25rem 0; border-bottom: 1px solid var(--ram); }
+.prehled dt { font-weight: 700; color: var(--text-tlumeny); }
+.prehled dd { margin: 0; }
+@media (max-width: 30rem) { .prehled div { grid-template-columns: 1fr; gap: 0; } }
+
+ol, ul { margin: 0 0 1rem; padding-left: 1.3rem; }
+li { margin: .3rem 0; }
+.patka { border-top: 2px solid var(--ram); padding: 1.2rem 0 2rem; color: var(--text-tlumeny); font-size: .92rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

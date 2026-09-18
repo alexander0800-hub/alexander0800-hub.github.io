@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test builds | Beta test – ČlovíčekHD</title>
+<meta name="description" content="Private area for ČlovíčekHD beta testers.">
+<!-- neveřejná sekce: nikdy do vyhledávačů ani do sitemap.xml -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="same-origin">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/beta/beta.css">
+</head>
+<body data-stranka="buildy">
+<a class="skip-link" href="#obsah">Skip to content</a>
+<header class="hlavicka">
+  <div class="wrap">
+    <a class="znacka" href="/beta/en/">ČlovíčekHD<span>Beta test</span></a>
+    <div class="nastroje">
+      <label for="motiv">Theme</label>
+      <select id="motiv">
+        <option value="system">Match system</option>
+        <option value="svetly">Light</option>
+        <option value="tmavy">Dark</option>
+      </select>
+      <a href="/beta/cs/buildy.html" hreflang="cs" lang="cs">Čeština</a>
+      <a id="odhlasit" href="/beta/en/" data-cil="/beta/en/" class="tlacitko-vedlejsi tlacitko mala">Sign out</a>
+    </div>
+    <nav class="menu" aria-label="Main menu">
+      <a href="/beta/en/buildy.html" aria-current="page">Test builds</a>
+      <a href="/beta/en/jak-testovat.html">How to test</a>
+      <a href="/beta/en/hlaseni.html">Report a bug</a>
+    </nav>
+  </div>
+</header>
+<main id="obsah">
+  <div class="wrap">
+    <h1>Test builds</h1>
+    <p class="napoveda">Download the latest build and install it as described in the guide. Older builds stay here for comparison.</p>
+    <div class="hlaska" id="hlaska" role="status" aria-live="polite">Loading…</div>
+    <div class="karta">
+      <table id="buildy-tabulka">
+        <caption>A download link is personal and valid for 5 minutes. If it expires, reload the page.</caption>
+        <thead><tr>
+          <th scope="col">Version</th><th scope="col">Platform</th>
+          <th scope="col">Released</th><th scope="col">Size</th>
+          <th scope="col">What's new</th><th scope="col">Download</th>
+        </tr></thead>
+        <tbody id="buildy-telo" data-prihlaseni="/beta/en/"></tbody>
+      </table>
+      <p><button type="button" id="obnovit" class="vedlejsi">Reload the list</button></p>
+    </div>
+  </div>
+</main>
+<nav class="spodni-lista" aria-label="Quick menu">
+  <ul>
+    <li><a href="/beta/en/buildy.html" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4 7.3 11.7l1.4-1.4 3.3 3.3V3h2ZM4 19h16v2H4z"/></svg>Test builds</a></li>
+    <li><a href="/beta/en/jak-testovat.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Zm-3 17h6v2H9z"/></svg>How to test</a></li>
+    <li><a href="/beta/en/hlaseni.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2Zm1 14h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg>Report a bug</a></li>
+  </ul>
+</nav>
+<footer class="patka"><div class="wrap">
+  <p>Private area for testers. Please do not share the links or the content.</p>
+  <p>Questions: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
+</div></footer>
+<script>window.BETA_API="/api";window.BETA_TEXTY={"meta":{"lang":"en","langName":"English","dir":"ltr"},"obecne":{"znacka":"AlexanderSoft","sekce":"Beta test","hra":"ČlovíčekHD","preskocit":"Skip to content","menu":"Main menu","menuSpodni":"Quick menu","menuOtevrit":"Open menu","menuZavrit":"Close menu","motiv":"Theme","motivSvetly":"Light","motivTmavy":"Dark","motivSystem":"Match system","jazyk":"Language","povinne":"required","chybaPole":"Please fill in this field.","nacitam":"Loading…","odhlasit":"Sign out","zpet":"Back","chybaSite":"Could not reach the server. Please try again.","chybaPrihlaseni":"You are not signed in. Please sign in again.","patickaNeverejne":"Private area for testers. Please do not share the links or the content.","patickaKontakt":"Questions: "},"nav":{"buildy":"Test builds","jakTestovat":"How to test","hlaseni":"Report a bug","admin":"Admin"},"prihlaseni":{"titulek":"Tester sign-in","popisMeta":"Private area for ČlovíčekHD beta testers.","h1":"ČlovíčekHD beta test","lead":"This area is for invited testers only. Sign in with your e-mail and the password you chose from the invitation.","email":"E-mail","kod":"Password","kodNapoveda":"You chose this password through the link in your invitation. If you have not set it yet, open that link.","odeslat":"Sign in","odesilam":"Signing in…","chybaUdaje":"That e-mail and password do not match.","zamek":"Eight attempts failed. Please try again in an hour, or write to us.","zbyva":"Attempts left: ","chybaPrazdne":"Please fill in both the e-mail and the password.","uspech":"Signed in. Opening the test builds…","soukromi":"We store only what the test needs: your e-mail, a hash of your password and your reports. Your account lives as long as you take part and we delete it within 90 days of the programme ending. A bug report is kept for a year from the release of the version it concerns. We never store the password itself."},"heslo":{"titulek":"Set your password","h1":"Set your password","lead":"This is your first visit from the invitation. Choose a password you will sign in with from now on.","heslo":"New password","potvrzeni":"The same password once more","pravidlaH":"The password must have","pravidla":["at least 12 characters","at least one letter (accented letters count)","at least one digit","at least one more character, such as a full stop or an exclamation mark"],"zobrazit":"Show the password","odeslat":"Save the password","odesilam":"Saving…","chybaKratke":"The password must have at least 12 characters.","chybaPismeno":"The password must contain a letter.","chybaCislice":"The password must contain a digit.","chybaSpecialni":"The password must contain one more character, such as a full stop or an exclamation mark.","chybaNeshoda":"The passwords do not match.","chybaToken":"The invitation link is missing or has already been used. Write to us and we will send a new one.","uspech":"The password is saved. Please sign in."},"buildy":{"titulek":"Test builds","h1":"Test builds","lead":"Download the latest build and install it as described in the guide. Older builds stay here for comparison.","sloupce":{"verze":"Version","platforma":"Platform","datum":"Released","velikost":"Size","poznamka":"What's new","akce":"Download"},"stahnout":"Download","obnovit":"Reload the list","kontrolniSoucet":"SHA-256 checksum","prazdne":"There is no build to download yet. We will e-mail you as soon as one is up.","doporucena":"Recommended build","starsi":"Older builds","odkazPlatnost":"A download link is personal and valid for 5 minutes. If it expires, reload the page."},"jakTestovat":{"titulek":"How to test","h1":"How to test","lead":"A short guide so your reports help as much as possible. It takes five minutes.","sekce":[{"h":"Before you start","body":["Download the latest build from the Test builds page.","Play on the computer you normally use. We also want to know how the game runs on a weaker machine.","Leave autosave on. If the game crashes, the saved position helps us find the bug."]},{"h":"What interests us most","body":["Crashes, freezes and places where you cannot continue.","Levels that are unexpectedly hard, or boring.","Mistakes in the texts and translations, including labels that overflow.","Keyboard and gamepad controls, readability and accessibility.","Performance: stutter, long loading, a noisy fan."]},{"h":"How to write a report","body":["One bug = one report. It is easier to fix that way.","Describe the steps so we can repeat the bug, ideally as a list.","Write what you expected and what really happened.","Add the game version and your operating system. The form pre-fills both.","Got a screenshot or a video? Say so in the steps and we will e-mail you."]},{"h":"What you need not report","body":["Missing content marked as \"in preparation\" in the release notes.","Placeholder art and sounds marked as temporary.","Anything already listed among the known issues for that build."]},{"h":"What does not belong in a report","body":["Please do not write other people's personal data in a report – no names, e-mails, addresses or anything from their screen.","We store the reports ourselves and only we read them. We keep a report for a year from the release of the version it concerns, then delete it.","If you want to send a screenshot, say so in the steps and cover anyone else's data on it."]},{"h":"Confidentiality","body":["Please do not share the test builds or screenshots from them before the game is released.","Your password is yours alone, do not pass it on.","If you no longer want to test, just write to us and we will close the account."]}],"kontaktH":"If you get stuck","kontaktBody":"Write to us at "},"hlaseni":{"titulek":"Report a bug","h1":"Report a bug","lead":"The more precise the description, the faster the fix. A star marks a required field.","kategorie":"Category","kategorieMoznosti":[["Pád hry","Crash or freeze"],["Chyba","Progress (cannot continue)"],["Grafika","Graphics"],["Zvuk","Sound and music"],["Ovládání","Controls"],["Text a překlad","Text and translation"],["Výkon","Performance"],["Přístupnost","Accessibility"],["Návrh","Suggestion"],["Jiné","Other"]],"zavaznost":"Severity","zavaznostMoznosti":[["Kritická","Blocking – cannot play on"],["Vysoká","High – big problem, but there is a workaround"],["Střední","Medium – annoying, still playable"],["Nízká","Low – a detail"]],"kroky":"Steps to reproduce","krokyNapoveda":"As a list: what you did before the bug showed up.","ocekavane":"What you expected","skutecne":"What really happened","verze":"Game version","verzeNapoveda":"You will find it in the bottom right corner of the main menu.","profil":"Performance profile","profilNapoveda":"If the game shows it in its settings. If you do not know, leave “Do not know” — that is a correct answer, not a mistake.","profilAuto":"Filled in automatically by the game.","profilMoznosti":[["Normální","Normal"],["Nízký","Low"],["Nevím","Do not know"]],"profilCas":"Time before the profile switched","profilCasNeprepnulo":"did not switch","profilCasJednotka":" s from start","system":"Operating system and computer","systemNapoveda":"For example: Windows 11, 16 GB RAM, GeForce RTX 3060.","uroven":"Level or place in the game","krok":"Step","krokZ":"of","krokNazvy":["What happened","Description","Sending"],"dalsi":"Continue","zpet":"Back","zarizeniH":"What we send about your device","zarizeniPopis":"This goes with the report so we know where the bug happened. We send nothing else – no location, nothing from other apps.","zarizeniPolozky":{"system":"Device and system","prohlizec":"Browser","obrazovka":"Screen","orientace":"Orientation","jazyk":"Device language","pamet":"Approximate memory","pripojeni":"Connection"},"orientaceNaVysku":"portrait","orientaceNaSirku":"landscape","neznamo":"not given","odeslat":"Send the report","odesilam":"Sending…","uspech":"Thank you! We have your report. Report number: ","uspechDalsi":"Report another bug","chybaPovinne":"Please fill in all required fields.","chybaOdeslani":"The report could not be sent. Please try again.","souhrn":"The form has errors:"},"admin":{"titulek":"Beta test admin","h1":"Beta test admin","lead":"Invitations, testers and reports. This area is for the studio only.","pozvankaH":"Invite a tester","pozvankaEmail":"Tester's e-mail","pozvankaJmeno":"Name or nickname","pozvankaPoznamka":"Note for us","pozvankaJazyk":"Invitation language","pozvankaRole":"Role","pozvankaRoleMoznosti":["tester","admin"],"pozvankaRolePopis":"a tester sees builds and reports bugs, an admin also manages invitations","pozvankaOdeslat":"Send the invitation","pozvankaOdesilam":"Sending…","pozvankaUspech":"Invitation sent to ","pozvankaChyba":"The invitation could not be sent.","testeriH":"Testers","testeriSloupce":{"email":"E-mail","jmeno":"Name","stav":"Status","pozvan":"Invited","posledni":"Last sign-in","hlaseni":"Reports","akce":"Actions"},"testeriPrazdne":"Nobody invited yet.","testerZrusit":"Revoke access","testerObnovit":"Restore access","testerPotvrdit":"Really revoke access for ","hlaseniH":"Reports","hlaseniSloupce":{"cislo":"Number","datum":"Date","kategorie":"Category","zavaznost":"Severity","verze":"Version","tester":"Tester","stav":"Status","detail":"Detail"},"hlaseniPrazdne":"No reports yet.","hlaseniStavy":["New","In progress","Fixed","Cannot reproduce","Rejected","Duplicate"],"filtrStav":"Filter by status","filtrVse":"All","detailOtevrit":"Show","detailZavrit":"Close","stavUlozen":"Status saved.","stavChyba":"The status could not be saved."}};</script>
+<script src="/beta/beta.js"></script>
+</body>
+</html>
