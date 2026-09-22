@@ -539,3 +539,9 @@ html { scroll-padding-top: 88px; }                         /* 2.4.11: fokus nesm
 .project.soon .state { color: #2f6a85; }                  /* 1.4.3: #3f7f9c měl 4,44 : 1 */
 @media (max-width: 360px) { .logo { font-size: 1.1rem; gap: .4rem; } }
 h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá slova (hu „Rendszerkövetelmények“) při 320 px */
+
+/* Karty her s popisem možností (web studia, 22. 9. 2026) */
+.projects .detail { grid-column: span 2; }
+.project .moznosti { margin: .8rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: .95rem; }
+.project .moznosti li { margin: .25rem 0; }
+@media (max-width: 980px) { .projects .detail { grid-column: auto; } }
