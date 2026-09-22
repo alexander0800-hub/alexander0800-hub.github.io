@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AlexanderSoft – independent game studio | ČlovíčekHD, strategy, Prague 3D</title>
-<meta name="description" content="AlexanderSoft is an independent game studio from Czechia. The family platformer ČlovíčekHD, a real-time strategy game and two games set in Prague. No ads, no microtransactions.">
+<title>AlexanderSoft – Czech studio for games and custom software | ČlovíčekHD</title>
+<meta name="description" content="AlexanderSoft is a Czech development studio: games and custom software. The family platformer ČlovíčekHD and other games with no ads or microtransactions, plus websites, apps and modules built to order.">
 <link rel="canonical" href="https://www.alexandersoft.net/en/">
 <link rel="alternate" hreflang="cs" href="https://www.alexandersoft.net/cs/">
 <link rel="alternate" hreflang="en" href="https://www.alexandersoft.net/en/">
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="AlexanderSoft">
-<meta property="og:title" content="AlexanderSoft – independent game studio | ČlovíčekHD, strategy, Prague 3D">
-<meta property="og:description" content="AlexanderSoft is an independent game studio from Czechia. The family platformer ČlovíčekHD, a real-time strategy game and two games set in Prague. No ads, no microtransactions.">
+<meta property="og:title" content="AlexanderSoft – Czech studio for games and custom software | ČlovíčekHD">
+<meta property="og:description" content="AlexanderSoft is a Czech development studio: games and custom software. The family platformer ČlovíčekHD and other games with no ads or microtransactions, plus websites, apps and modules built to order.">
 <meta property="og:url" content="https://www.alexandersoft.net/en/">
 <meta property="og:image" content="https://www.alexandersoft.net/img/og/og-clovicek-hd.jpg">
 <meta property="og:image:width" content="1200">
@@ -134,6 +134,7 @@
     </div>
     <nav class="nav" id="hlavni-menu" aria-label="Main menu">
       <a href="#nase-hry">Games</a>
+      <a href="#software">Software</a>
       <a href="#hra">ČlovíčekHD</a>
       <a href="#galerie">Gallery</a>
       <a href="#cenik">Pricing</a>
@@ -147,9 +148,9 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-bg"><img src="/img/hero_hory-1920.webp" srcset="/img/hero_hory-480.webp 480w, /img/hero_hory-960.webp 960w, /img/hero_hory-1440.webp 1440w, /img/hero_hory-1920.webp 1920w" sizes="(max-width: 980px) 220vw, 140vw" width="1920" height="1080" alt="" decoding="async" fetchpriority="high"></div>
   <div class="wrap">
-    <span class="eyebrow eyebrow-light">Independent game studio from Czechia</span>
+    <span class="eyebrow eyebrow-light">Czech development studio: games and custom software</span>
     <h1 id="hero-title">Alexander<span>Soft</span></h1>
-    <p class="tag">We make games you buy once and play without ads or microtransactions. A family platformer, a strategy game across the ages and a Prague full of legends.</p>
+    <p class="tag">A small Czech studio making games with no ads and no microtransactions – and building custom software between projects.</p>
     <ul class="badges" aria-label="What all our games have in common"><li>No ads</li><li>No microtransactions</li><li>Plays offline</li><li>One-time licence</li></ul>
     <div class="cta-row">
       <a class="btn btn-primary" href="#nase-hry">Our games</a>
@@ -157,6 +158,19 @@
     </div>
   </div>
 </section>
+
+<div class="mode-switch">
+  <div class="wrap">
+    <fieldset class="mode-fieldset">
+      <legend class="sr-only">Show:</legend>
+      <label class="mode-option"><input type="radio" name="rezim" id="rezim-hry" checked><span>Games</span></label>
+      <label class="mode-option"><input type="radio" name="rezim" id="rezim-software"><span>Software</span></label>
+    </fieldset>
+  </div>
+</div>
+<script>try{if(localStorage.getItem('as-rezim')==='software'){document.getElementById('rezim-software').checked=true}}catch(e){}</script>
+
+<div class="panel-hry">
 
 <section class="coming" id="nase-hry" aria-labelledby="nase-hry-title">
   <div class="wrap">
@@ -360,12 +374,84 @@
     <div class="reveal">
       <span class="eyebrow">About us</span>
       <h2 id="studio-title">A small Czech studio with big adventures</h2>
-      <p>AlexanderSoft is an independent game studio from Prague. We make games parents can happily hand to their kids: paid for once, with no ads, no tracking and no tricks to squeeze money out of children.</p>
+      <p>AlexanderSoft is a small Czech development studio from Prague. Alongside games parents can safely let their kids play, we build custom software – websites, apps and modules we use ourselves and can tailor to you.</p>
       <p>We use modern tools in development, including artificial intelligence. But what is right for children is always decided by a person.</p>
     </div>
     <ul class="values reveal"><li><strong>Safe</strong> No ads, no chats with strangers, no data collection.</li><li><strong>Fair</strong> One price, no microtransactions or loot boxes.</li><li><strong>For everyone</strong> A Czech voice-over and text and voice-over in eight more languages are in preparation.</li></ul>
   </div>
 </section>
+
+</div>
+
+<div class="panel-software">
+
+<section class="software" id="software" aria-labelledby="software-title">
+  <div class="wrap">
+    <span class="eyebrow">Software</span>
+    <h2 id="software-title">Custom software from the same team</h2>
+    <p class="lead">Alongside games, we build software too: websites, apps and modules we use in our own projects and can tailor to your company.</p>
+    <h3 class="modules-title">Modules we can deploy</h3>
+    <ul class="modules-grid">
+      <li><strong>Localization into 9 languages</strong><p>A translation system that powers this website and our game – language switching, correct links between language versions, no broken pages.</p></li>
+      <li><strong>Radio and background audio</strong><p>A module for playing internet radio and audio loops in an app or on the web.</p></li>
+      <li><strong>Performance overview</strong><p>A dashboard with a performance and health overview for operators.</p></li>
+      <li><strong>Websites</strong><p>Fast, accessible websites like this one – multilingual, cookie-free tracking, audited accessibility.</p></li>
+      <li><strong>Applications</strong><p>Desktop and web applications built to order.</p></li>
+      <li><strong>Custom systems</strong><p>Internal tools and inquiry or order systems tailored to your operation.</p></li>
+    </ul>
+    <p class="software-note">We don't list references from specific clients yet – we don't have any. You can verify what we can do directly on this website and in our game.</p>
+  </div>
+</section>
+
+<section class="poptavka" id="poptavka" aria-labelledby="poptavka-title">
+  <div class="wrap">
+    <span class="eyebrow">No-obligation inquiry</span>
+    <h2 id="poptavka-title">Have a custom project?</h2>
+    <p class="lead">We're just starting out with custom development, so this inquiry is no-obligation – for you and for us. Write to us about what you need, and we'll get back to you within 5 business days.</p>
+    <noscript><p class="form-noscript">The inquiry form requires JavaScript. Please write to us directly at <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
+    <form class="poptavka-form" id="poptavka-form" data-sending="Sending…" data-success="Thank you, we've received your inquiry. We'll reply to the given email within 5 business days." data-error="The inquiry could not be sent. Please try again, or write directly to info@alexandersoft.net.">
+      <div class="form-row">
+        <label for="poptavka-jmeno">Name</label>
+        <input type="text" id="poptavka-jmeno" name="jmeno" autocomplete="name" required>
+      </div>
+      <div class="form-row">
+        <label for="poptavka-email">Email</label>
+        <input type="email" id="poptavka-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="poptavka-typ">Project type</label>
+        <select id="poptavka-typ" name="typ" required>
+          <option value="web">Website</option>
+          <option value="desktop">Desktop application</option>
+          <option value="mobil">Mobile application</option>
+          <option value="system">Custom system</option>
+          <option value="jine">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="poptavka-popis">Inquiry description</label>
+        <textarea id="poptavka-popis" name="popis" rows="4" placeholder="What you need and why…" required></textarea>
+      </div>
+      <div class="form-row">
+        <label for="poptavka-rozpocet">Approximate budget (optional)</label>
+        <input type="text" id="poptavka-rozpocet" name="rozpocet" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <label for="poptavka-termin">Approximate deadline (optional)</label>
+        <input type="text" id="poptavka-termin" name="termin" autocomplete="off">
+      </div>
+      <div class="form-row form-row-hp" aria-hidden="true">
+        <label for="poptavka-hp">Leave this field empty</label>
+        <input type="text" id="poptavka-hp" name="hp" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="check" for="poptavka-souhlas"><input type="checkbox" id="poptavka-souhlas" name="souhlas" required><span>I agree to the processing of the above data for the purpose of handling this inquiry. Details in <a href="/en/pravni.html#poptavky">the legal information</a>.</span></label>
+      <div class="form-status" id="poptavka-status" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-primary">Send no-obligation inquiry</button>
+    </form>
+  </div>
+</section>
+
+</div>
 
 </main>
 <footer class="site-footer">
@@ -373,9 +459,10 @@
     <div class="cols">
       <div>
         <h2 class="h4">AlexanderSoft</h2>
-        <p>Family games with no ads, no microtransactions and no tracking.</p>
+        <p>Family games and custom software – no ads, no microtransactions, no tracking.</p>
         <p>Operator: AlexanderSoft, an independent Czech game studio<br>Full seller identification details will be added before sales begin.</p>
         <p>Contact: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
+        <p class="beta-note">Want to play our games early? Become a beta tester: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
       </div>
       <div>
         <h2 class="h4">Game</h2>
@@ -395,12 +482,13 @@
           <li><a href="/en/pravni.html#licence">Licence and terms</a></li>
           <li><a href="/en/pravni.html#gdpr">Privacy</a></li>
           <li><a href="/en/pravni.html#cookies">Cookies</a></li>
+          <li><a href="/en/pravni.html#poptavky">Custom software inquiries</a></li>
           <li><a href="/en/pravni.html#kredity">Credits</a></li>
           <li><a href="/en/pristupnost.html">Accessibility</a></li>
         </ul>
       </div>
     </div>
-    <p class="copyright">© 2026 AlexanderSoft (working name). All images are screenshots from our games. This site uses no cookies and no analytics.</p>
+    <p class="copyright">© 2026 AlexanderSoft (working name). All images are screenshots from our games. This site uses no cookies; we measure traffic without cookies via Cloudflare Web Analytics.</p>
   </div>
 </footer>
 

@@ -1,4 +1,6 @@
-// AlexanderSoft web – menu, reveal, lightbox, purchase consents. No cookies, no storage, no network.
+// AlexanderSoft web – menu, reveal, lightbox, purchase consents, mode switch, inquiry form.
+// No tracking cookies. Only optional storage: remembering the Hry/Software choice (localStorage).
+// Only network call: the inquiry form POSTs to the Worker, and only when the visitor submits it.
 (() => {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -66,4 +68,54 @@
   }
 
   // Purchase form and BTC copy button were removed until sales start (old code: _nepouzite/main_js_nakup_formular_v0.js).
+
+  // Mode switch (Hry/Software): CSS :has() drives the toggle itself; this only remembers the choice
+  // and, for people who arrived via the "Software" nav link (#software/#poptavka), keeps the tab UI in sync.
+  $$('input[name="rezim"]').forEach((r) => r.addEventListener('change', () => {
+    if (!r.checked) return;
+    try { localStorage.setItem('as-rezim', r.id === 'rezim-software' ? 'software' : 'hry'); } catch (e) { /* private mode etc. */ }
+  }));
+  if (location.hash === '#software' || location.hash === '#poptavka') {
+    const swRadio = $('#rezim-software');
+    if (swRadio) swRadio.checked = true;
+  }
+
+  // Software inquiry form ("nezávazná poptávka") -> Cloudflare Worker.
+  const poptavka = $('#poptavka-form');
+  if (poptavka) {
+    const status = $('#poptavka-status', poptavka);
+    const btn = $('button[type="submit"]', poptavka);
+    poptavka.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!poptavka.reportValidity()) return;
+      const fd = new FormData(poptavka);
+      const payload = {
+        jmeno: fd.get('jmeno') || '',
+        email: fd.get('email') || '',
+        typ: fd.get('typ') || '',
+        popis: fd.get('popis') || '',
+        rozpocet: fd.get('rozpocet') || '',
+        termin: fd.get('termin') || '',
+        jazyk: document.documentElement.lang || '',
+        souhlas: !!fd.get('souhlas'),
+        hp: fd.get('hp') || '',
+      };
+      btn.disabled = true;
+      status.textContent = poptavka.dataset.sending;
+      // text/plain (not application/json): the Worker still reads it as JSON, but a "simple" content-type
+      // avoids a CORS preflight (OPTIONS) request for this cross-origin POST.
+      fetch('https://beta-portal.boss-05d.workers.dev/api/poptavka', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload),
+      }).then(async (r) => {
+        const data = await r.json().catch(() => null);
+        if (!r.ok) { status.textContent = (data && data.zprava) || poptavka.dataset.error; return; }
+        status.textContent = poptavka.dataset.success;
+        poptavka.reset();
+      }).catch(() => {
+        status.textContent = poptavka.dataset.error;
+      }).finally(() => { btn.disabled = false; });
+    });
+  }
 })();

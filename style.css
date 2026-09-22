@@ -545,3 +545,47 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
 .project .moznosti { margin: .8rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: .95rem; }
 .project .moznosti li { margin: .25rem 0; }
 @media (max-width: 980px) { .projects .detail { grid-column: auto; } }
+
+/* Přepínač Hry / Software (R-035, 22. 9. 2026). Bez :has() se zobrazí obě sekce – funkční výchozí stav bez JS i bez podpory :has(). */
+/* Velké, hned viditelné záložky Hry / Software (zvětšeno na žádost majitele přes CEO, 22. 9. 2026) */
+.mode-switch { padding: 1.6rem 0 0; background: var(--paper); }
+.mode-fieldset { border: 0; margin: 0; padding: 0; display: flex; gap: .8rem; }
+/* Standardní technika "jen pro odečítač" – rozpoznává ji i tools/check_a11y.mjs (1.4.12), proto tenhle přesný název třídy. */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mode-option {
+  position: relative; flex: 1; display: flex; align-items: center; justify-content: center; gap: .5rem;
+  cursor: pointer; font-family: var(--font-head); font-weight: 700; font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  padding: 1.1rem 1rem; border-radius: var(--radius) var(--radius) 0 0; border: 2px solid #f1e3cf; border-bottom: 0;
+  background: #fff; color: var(--bark);
+}
+.mode-option input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.mode-option:has(input:checked) { background: linear-gradient(180deg, var(--sun), var(--sun-deep)); border-color: var(--sun-deep); }
+.mode-option:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 3px; }
+@media (max-width: 640px) { .mode-fieldset { flex-direction: column; gap: .6rem; } .mode-option { border-radius: var(--radius); border-bottom: 2px solid #f1e3cf; } .mode-option:has(input:checked) { border-color: var(--sun-deep); } }
+
+.mode-switch:has(#rezim-software:checked) ~ .panel-hry { display: none; }
+.mode-switch:has(#rezim-hry:checked) ~ .panel-software { display: none; }
+/* Odkaz "Software" v horní nabídce musí sekci odkrýt, i když je zrovna zvolená záložka Hry a JS neběží. */
+.panel-software:has(#software:target), .panel-software:has(#poptavka:target) { display: block; }
+.panel-hry:has(~ .panel-software #software:target), .panel-hry:has(~ .panel-software #poptavka:target) { display: none; }
+
+.software .modules-grid { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+.software .modules-grid li { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.2rem 1.3rem; border: 1px solid #f1e3cf; }
+.software .modules-grid strong { display: block; margin-bottom: .3rem; color: var(--bark); font-family: var(--font-head); }
+.software .modules-grid p { margin: 0; color: var(--muted); font-size: .95rem; }
+.software-note { margin-top: 1.6rem; color: var(--muted); font-size: .95rem; }
+.modules-title { margin-top: 2rem; font-size: 1.2rem; color: var(--bark); }
+
+.poptavka-form { display: grid; gap: 1.2rem; margin-top: 1.8rem; max-width: 640px; }
+.poptavka-form .form-row { display: grid; gap: .4rem; }
+.poptavka-form label { font-weight: 700; color: var(--bark); }
+.poptavka-form input[type="text"], .poptavka-form input[type="email"], .poptavka-form select, .poptavka-form textarea {
+  font: inherit; padding: .65rem .75rem; border-radius: .6rem; border: 1px solid #c9b39b; background: #fff; color: var(--ink); width: 100%;
+}
+.poptavka-form input:focus-visible, .poptavka-form select:focus-visible, .poptavka-form textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.poptavka-form textarea { resize: vertical; }
+.poptavka-form .form-row-hp { position: absolute; left: -9999px; top: -9999px; } /* mimo obrazovku, ne clip – ať 1.4.12 nehlásí ořez skrytého textu */
+.poptavka-form .check { max-width: none; }
+.form-status { min-height: 1.4em; font-weight: 700; color: var(--focus); }
+.form-noscript { color: var(--muted); }
+.beta-note { font-size: .9rem; } /* dědí světlou barvu textu patičky (--muted má kontrast jen na světlém pozadí) */
