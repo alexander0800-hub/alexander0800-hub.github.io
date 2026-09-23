@@ -1,4 +1,4 @@
-// AlexanderSoft web – menu, reveal, lightbox, purchase consents, mode switch, inquiry form.
+// AlexanderSoft web – menu, reveal, lightbox, mode switch, sticky call-to-action, inquiry and interest forms.
 // No tracking cookies. Only optional storage: remembering the Hry/Software choice (localStorage).
 // Only network call: the inquiry form POSTs to the Worker, and only when the visitor submits it.
 (() => {
@@ -116,6 +116,72 @@
       }).catch(() => {
         status.textContent = poptavka.dataset.error;
       }).finally(() => { btn.disabled = false; });
+    });
+  }
+
+  // Sticky call-to-action bar (phones only, CSS shows it below 760 px): visible once the hero is scrolled away,
+  // hidden again while another call to action (hero, form, band) or the footer is on screen.
+  const sticky = $('#sticky-cta');
+  if (sticky && 'IntersectionObserver' in window) {
+    const watch = ['.hero', '#zajem', '#pas-vyzva', '.site-footer'].map((q) => $(q)).filter(Boolean);
+    const seen = new Set();
+    const sw = $('#rezim-software');
+    const update = () => { sticky.hidden = seen.size > 0 || window.scrollY < 200 || !!(sw && sw.checked); };
+    $$('input[name="rezim"]').forEach((r) => r.addEventListener('change', update));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) seen.add(en.target); else seen.delete(en.target); });
+      update();
+    });
+    watch.forEach((el) => io.observe(el));
+    window.addEventListener('scroll', update, { passive: true });
+  }
+
+  // Interest form (beta test / release notification): rendered only when the build has it enabled (site/zajem.json).
+  // The two hero buttons preselect the choice; the form itself is inside the Hry panel, so make sure that panel is shown.
+  const zajem = $('#zajem-form');
+  if (zajem) {
+    const status = $('#zajem-status', zajem);
+    const btn = $('button[type="submit"]', zajem);
+    let zdroj = 'primo';
+    const showGames = () => {
+      const r = $('#rezim-hry');
+      if (r && !r.checked) { r.checked = true; try { localStorage.setItem('as-rezim', 'hry'); } catch (e) { /* private mode etc. */ } }
+    };
+    $$('[data-zajem]').forEach((a) => a.addEventListener('click', () => {
+      showGames();
+      zdroj = a.dataset.zdroj || ('hero-' + a.dataset.zajem);
+      const radio = $(`input[name="typ"][value="${a.dataset.zajem}"]`, zajem);
+      if (radio) radio.checked = true;
+    }));
+    if (location.hash === '#zajem') showGames();
+    zajem.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!zajem.reportValidity()) return;
+      const fd = new FormData(zajem);
+      const payload = {
+        email: fd.get('email') || '',
+        jazyk: fd.get('jazyk') || '',
+        typ: fd.get('typ') || 'beta',
+        stranka: document.documentElement.lang || '',
+        zdroj,
+        souhlas: !!fd.get('souhlas'),
+        souhlasVerze: 'zajem-2026-09-23',
+        hp: fd.get('hp') || '',
+      };
+      btn.disabled = true;
+      status.classList.remove('ok');
+      status.textContent = zajem.dataset.sending;
+      // text/plain: "simple" content-type, no CORS preflight (same as the inquiry form).
+      fetch(zajem.dataset.endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) })
+        .then(async (r) => {
+          const data = await r.json().catch(() => null);
+          if (!r.ok) { status.textContent = (data && data.zprava) || zajem.dataset.error; return; }
+          status.textContent = zajem.dataset.success;
+          status.classList.add('ok');
+          zajem.reset();
+        })
+        .catch(() => { status.textContent = zajem.dataset.error; })
+        .finally(() => { btn.disabled = false; });
     });
   }
 })();

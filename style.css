@@ -589,3 +589,37 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
 .form-status { min-height: 1.4em; font-weight: 700; color: var(--focus); }
 .form-noscript { color: var(--muted); }
 .beta-note { font-size: .9rem; } /* dědí světlou barvu textu patičky (--muted má kontrast jen na světlém pozadí) */
+
+/* ---- Konverze v1.11 (23. 9. 2026): plánovaná cena, formulář zájmu, rádio ---- */
+.price-planned { margin: .5rem 0 0; font-weight: 800; font-size: .95rem; color: #9a5010; }
+.price-planned + .price { margin-top: .2rem; }
+.check input[type="radio"] { border-radius: 50%; }
+.check input[type="radio"]::before { clip-path: none; border-radius: 50%; width: .6rem; height: .6rem; }
+.zajem { background: var(--cream); padding: clamp(36px, 6vw, 72px) 0; }
+.zajem-box { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1.4rem, 4vw, 3rem); align-items: start; }
+.zajem-age { margin: 1rem 0 0; font-weight: 700; color: var(--bark); }
+.zajem-form { margin-top: 0; max-width: none; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.2rem, 3vw, 2rem); }
+.zajem-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.zajem-form legend { padding: 0; margin: 0 0 .5rem; font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; color: var(--bark); }
+.zajem-form .check { padding: .5rem 0; }
+.zajem-form .btn { justify-self: start; }
+@media (max-width: 760px) { .zajem-box { grid-template-columns: minmax(0, 1fr); } .zajem-form .btn { justify-self: stretch; } }
+.zajem-form .form-row-hp { display: none; } /* honeypot: display:none, aby ho testy přetečení/1.4.12 nepočítaly (formulář zájmu je vidět v Hry panelu) */
+.legal a.btn-primary { color: var(--bark); text-decoration: none; }
+
+/* ---- Konverze v1.11 balík 2: pás výzvy, sbalené projekty, lepivá lišta, cíle dotyku ---- */
+.cta-band { background: var(--night); color: #fff; padding: clamp(36px, 5vw, 64px) 0; }
+.cta-band h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 1.2rem; }
+.cta-band .btn-secondary { background: rgba(255,255,255,.14); color: #fff; border: 2px solid rgba(255,255,255,.55); box-shadow: none; }
+.cta-band :focus-visible { outline-color: var(--sun); }
+.more-projects { margin-top: 1.6rem; }
+.more-projects summary { cursor: pointer; font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; color: var(--bark); padding: .6rem 0; }
+.more-projects[open] summary { margin-bottom: 1rem; }
+.sticky-cta { display: none; }
+@media (max-width: 760px) {
+  html { scroll-padding-bottom: 5.5rem; }
+  .sticky-cta:not([hidden]) { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: .6rem 16px calc(.6rem + env(safe-area-inset-bottom)); background: rgba(27,31,46,.96); box-shadow: 0 -4px 16px rgba(0,0,0,.25); }
+  .sticky-cta .btn { width: 100%; justify-content: center; box-shadow: 0 4px 0 #b9661f; }
+  .sticky-cta :focus-visible { outline-color: var(--sun); }
+}
+.site-footer li a { display: inline-block; padding: .25rem 0; min-height: 24px; }
