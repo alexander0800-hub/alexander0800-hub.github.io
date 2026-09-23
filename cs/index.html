@@ -153,8 +153,8 @@
     <p class="tag">Rodinná plošinovka: 100 levelů v 10 krajinách, parťák Dráček a příběh, který se předčítá.</p>
     <ul class="badges" aria-label="Co platí pro všechny naše hry"><li>Bez reklam</li><li>Bez mikrotransakcí</li><li>Hraje i offline</li><li>Jednorázová licence</li></ul>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=P%C5%99idat%20se%20do%20betatestu%20%5Bhero%5D" data-zajem="beta" data-zdroj="hero-beta">Přidat se do betatestu</a>
-      <a class="btn btn-ghost" href="mailto:info@alexandersoft.net?subject=D%C3%A1t%20v%C4%9Bd%C4%9Bt%20o%20vyd%C3%A1n%C3%AD%20%5Bhero%5D" data-zajem="vydani" data-zdroj="hero-vydani">Dát vědět o vydání</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="hero-beta">Přidat se do betatestu</a>
+      <a class="btn btn-ghost" href="#zajem" data-zajem="vydani" data-zdroj="hero-vydani">Dát vědět o vydání</a>
     </div>
   </div>
 </section>
@@ -171,7 +171,39 @@
 <script>try{if(localStorage.getItem('as-rezim')==='software'){document.getElementById('rezim-software').checked=true}}catch(e){}</script>
 
 <div class="panel-hry">
-
+<section class="zajem" id="zajem" aria-labelledby="zajem-title">
+  <div class="wrap zajem-box">
+    <div class="zajem-intro">
+      <span class="eyebrow">Betatest a vydání</span>
+      <h2 id="zajem-title">Hrajte jako první</h2>
+      <p class="lead">Nechte nám e-mail. Ozveme se kvůli betatestu nebo až hra vyjde a nic jiného vám nepošleme.</p>
+      <p class="zajem-age">Je ti méně než 15 let? Ať se přihlásí rodič.</p>
+    </div>
+    <noscript><p class="form-noscript">Formulář vyžaduje JavaScript. Napište nám prosím přímo na <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
+    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Odesíláme…" data-success="Děkujeme, zapsali jsme vás. Ozveme se e-mailem." data-error="Přihlášení se nepodařilo. Zkuste to prosím znovu, nebo napište na info@alexandersoft.net.">
+      <fieldset>
+        <legend>Co chcete</legend>
+        <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>Chci se přidat do betatestu</span></label>
+        <label class="check" for="zajem-vydani"><input type="radio" id="zajem-vydani" name="typ" value="vydani"><span>Stačí mi zpráva o vydání hry</span></label>
+      </fieldset>
+      <div class="form-row">
+        <label for="zajem-email">E-mail</label>
+        <input type="email" id="zajem-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="zajem-jazyk">V jakém jazyce vám máme psát</label>
+        <select id="zajem-jazyk" name="jazyk"><option value="cs" lang="cs" selected>Čeština</option><option value="en" lang="en">English</option><option value="sk" lang="sk">Slovenčina</option><option value="pl" lang="pl">Polski</option><option value="de" lang="de">Deutsch</option><option value="hu" lang="hu">Magyar</option><option value="es" lang="es">Español</option><option value="ru" lang="ru">Русский</option><option value="zh" lang="zh-Hans">简体中文</option></select>
+      </div>
+      <div class="form-row form-row-hp" aria-hidden="true">
+        <label for="zajem-hp">Nechte toto pole prázdné</label>
+        <input type="text" id="zajem-hp" name="hp" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="check" for="zajem-souhlas"><input type="checkbox" id="zajem-souhlas" name="souhlas" required><span>Souhlasím s uložením e-mailu a jazyka a s tím, že mi studio napíše kvůli betatestu nebo vydání hry. Souhlas mohu kdykoli odvolat, v každé zprávě bude odkaz pro odhlášení. Podrobnosti v <a href="/cs/pravni.html#zajem">právních informacích</a>.</span></label>
+      <div class="form-status" id="zajem-status" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-primary">Odeslat</button>
+    </form>
+  </div>
+</section>
 
 <section class="audience" aria-labelledby="audience-title">
   <div class="wrap">
@@ -304,8 +336,8 @@
   <div class="wrap">
     <h2 id="cta-band-title">Chcete hrát naše hry dřív? Staňte se betatesterem</h2>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=P%C5%99idat%20se%20do%20betatestu%20%5Bpas%5D" data-zajem="beta" data-zdroj="pas-beta">Přidat se do betatestu</a>
-      <a class="btn btn-secondary" href="mailto:info@alexandersoft.net?subject=D%C3%A1t%20v%C4%9Bd%C4%9Bt%20o%20vyd%C3%A1n%C3%AD%20%5Bpas%5D" data-zajem="vydani" data-zdroj="pas-vydani">Dát vědět o vydání</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="pas-beta">Přidat se do betatestu</a>
+      <a class="btn btn-secondary" href="#zajem" data-zajem="vydani" data-zdroj="pas-vydani">Dát vědět o vydání</a>
     </div>
   </div>
 </section>
@@ -437,7 +469,7 @@
         <p>Rodinné hry i software na míru – bez reklam, bez mikrotransakcí a bez sledovacích cookies.</p>
         <p>Provozovatel: české nezávislé studio AlexanderSoft<br>Úplné identifikační údaje prodávajícího doplníme před spuštěním prodeje.</p>
         <p>Kontakt: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
-        <p class="beta-note">Chcete hrát naše hry dřív? Staňte se betatesterem: <a href="mailto:info@alexandersoft.net?subject=P%C5%99idat%20se%20do%20betatestu%20%5Bpaticka%5D">info@alexandersoft.net</a></p>
+        <p class="beta-note">Chcete hrát naše hry dřív? Staňte se betatesterem: <a href="/cs/#zajem">Přidat se do betatestu</a></p>
       </div>
       <div>
         <h2 class="h4">Hra</h2>
@@ -457,6 +489,7 @@
           <li><a href="/cs/pravni.html#gdpr">Ochrana osobních údajů</a></li>
           <li><a href="/cs/pravni.html#cookies">Cookies</a></li>
           <li><a href="/cs/pravni.html#poptavky">Poptávky software na míru</a></li>
+          <li><a href="/cs/pravni.html#zajem">Betatest a oznámení o vydání</a></li>
           <li><a href="/cs/pravni.html#kredity">Kredity</a></li>
           <li><a href="/cs/pristupnost.html">Přístupnost</a></li>
         </ul>
@@ -471,7 +504,7 @@
   <img alt="">
 </div>
 <div class="sticky-cta" id="sticky-cta" hidden>
-  <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=P%C5%99idat%20se%20do%20betatestu%20%5Blista%5D" data-zajem="beta" data-zdroj="lista-beta">Přidat se do betatestu</a>
+  <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="lista-beta">Přidat se do betatestu</a>
 </div>
 <script src="/main.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "817981b99ad84510902c8529195bf2ae"}'></script><!-- End Cloudflare Web Analytics -->

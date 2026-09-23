@@ -153,8 +153,8 @@
     <p class="tag">Családi platformjáték: 100 pálya 10 vidéken, Dráček, a dinópajtás, és felolvasott történet.</p>
     <ul class="badges" aria-label="Ami minden játékunkra érvényes"><li>Reklámok nélkül</li><li>Mikrotranzakciók nélkül</li><li>Offline is fut</li><li>Egyszeri licenc</li></ul>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=Csatlakozom%20a%20b%C3%A9ta%20teszthez%20%5Bhero%5D" data-zajem="beta" data-zdroj="hero-beta">Csatlakozom a béta teszthez</a>
-      <a class="btn btn-ghost" href="mailto:info@alexandersoft.net?subject=%C3%89rtes%C3%ADt%C3%A9st%20k%C3%A9rek%20a%20megjelen%C3%A9sr%C5%91l%20%5Bhero%5D" data-zajem="vydani" data-zdroj="hero-vydani">Értesítést kérek a megjelenésről</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="hero-beta">Csatlakozom a béta teszthez</a>
+      <a class="btn btn-ghost" href="#zajem" data-zajem="vydani" data-zdroj="hero-vydani">Értesítést kérek a megjelenésről</a>
     </div>
   </div>
 </section>
@@ -171,7 +171,39 @@
 <script>try{if(localStorage.getItem('as-rezim')==='software'){document.getElementById('rezim-software').checked=true}}catch(e){}</script>
 
 <div class="panel-hry">
-
+<section class="zajem" id="zajem" aria-labelledby="zajem-title">
+  <div class="wrap zajem-box">
+    <div class="zajem-intro">
+      <span class="eyebrow">Béta teszt és megjelenés</span>
+      <h2 id="zajem-title">Játsszon elsőként</h2>
+      <p class="lead">Hagyja meg az e-mail-címét. A béta teszttel kapcsolatban vagy a játék megjelenésekor jelentkezünk, másról nem írunk.</p>
+      <p class="zajem-age">Nem vagy még 15 éves? Kérd meg a szüleidet, hogy jelentkezzenek.</p>
+    </div>
+    <noscript><p class="form-noscript">Az űrlaphoz JavaScript szükséges. Kérjük, írjon közvetlenül a(z) <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a> címre.</p></noscript>
+    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Küldés…" data-success="Köszönjük, felvettük Önt a listára. E-mailben jelentkezünk." data-error="A jelentkezés nem sikerült. Kérjük, próbálja újra, vagy írjon a(z) info@alexandersoft.net címre.">
+      <fieldset>
+        <legend>Mit szeretne</legend>
+        <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>Csatlakozni szeretnék a béta teszthez</span></label>
+        <label class="check" for="zajem-vydani"><input type="radio" id="zajem-vydani" name="typ" value="vydani"><span>Elég egy üzenet a játék megjelenéséről</span></label>
+      </fieldset>
+      <div class="form-row">
+        <label for="zajem-email">E-mail</label>
+        <input type="email" id="zajem-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="zajem-jazyk">Milyen nyelven írjunk Önnek</label>
+        <select id="zajem-jazyk" name="jazyk"><option value="cs" lang="cs">Čeština</option><option value="en" lang="en">English</option><option value="sk" lang="sk">Slovenčina</option><option value="pl" lang="pl">Polski</option><option value="de" lang="de">Deutsch</option><option value="hu" lang="hu" selected>Magyar</option><option value="es" lang="es">Español</option><option value="ru" lang="ru">Русский</option><option value="zh" lang="zh-Hans">简体中文</option></select>
+      </div>
+      <div class="form-row form-row-hp" aria-hidden="true">
+        <label for="zajem-hp">Hagyja üresen ezt a mezőt</label>
+        <input type="text" id="zajem-hp" name="hp" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="check" for="zajem-souhlas"><input type="checkbox" id="zajem-souhlas" name="souhlas" required><span>Hozzájárulok az e-mail-címem és a nyelvem tárolásához, valamint ahhoz, hogy a stúdió a béta teszttel vagy a játék megjelenésével kapcsolatban írjon nekem. A hozzájárulást bármikor visszavonhatom; minden üzenetben lesz leiratkozási link. Részletek: <a href="/hu/pravni.html#zajem">jogi tudnivalók</a>.</span></label>
+      <div class="form-status" id="zajem-status" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-primary">Küldés</button>
+    </form>
+  </div>
+</section>
 
 <section class="audience" aria-labelledby="audience-title">
   <div class="wrap">
@@ -304,8 +336,8 @@
   <div class="wrap">
     <h2 id="cta-band-title">Korábban játszana a játékainkkal? Legyen béta-tesztelő</h2>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=Csatlakozom%20a%20b%C3%A9ta%20teszthez%20%5Bpas%5D" data-zajem="beta" data-zdroj="pas-beta">Csatlakozom a béta teszthez</a>
-      <a class="btn btn-secondary" href="mailto:info@alexandersoft.net?subject=%C3%89rtes%C3%ADt%C3%A9st%20k%C3%A9rek%20a%20megjelen%C3%A9sr%C5%91l%20%5Bpas%5D" data-zajem="vydani" data-zdroj="pas-vydani">Értesítést kérek a megjelenésről</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="pas-beta">Csatlakozom a béta teszthez</a>
+      <a class="btn btn-secondary" href="#zajem" data-zajem="vydani" data-zdroj="pas-vydani">Értesítést kérek a megjelenésről</a>
     </div>
   </div>
 </section>
@@ -437,7 +469,7 @@
         <p>Családi játékok és egyedi szoftver – reklám, mikrotranzakció és követő sütik nélkül.</p>
         <p>Üzemeltető: AlexanderSoft, független cseh játékstúdió<br>Az eladó teljes azonosító adatait az értékesítés indulása előtt tesszük közzé.</p>
         <p>Kapcsolat: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
-        <p class="beta-note">Korábban játszana a játékainkkal? Legyen béta-tesztelő: <a href="mailto:info@alexandersoft.net?subject=Csatlakozom%20a%20b%C3%A9ta%20teszthez%20%5Bpaticka%5D">info@alexandersoft.net</a></p>
+        <p class="beta-note">Korábban játszana a játékainkkal? Legyen béta-tesztelő: <a href="/hu/#zajem">Csatlakozom a béta teszthez</a></p>
       </div>
       <div>
         <h2 class="h4">Játék</h2>
@@ -457,6 +489,7 @@
           <li><a href="/hu/pravni.html#gdpr">Adatvédelem</a></li>
           <li><a href="/hu/pravni.html#cookies">Sütik</a></li>
           <li><a href="/hu/pravni.html#poptavky">Egyedi szoftverre vonatkozó megkeresések</a></li>
+          <li><a href="/hu/pravni.html#zajem">Béta teszt és megjelenési értesítés</a></li>
           <li><a href="/hu/pravni.html#kredity">Közreműködők</a></li>
           <li><a href="/hu/pristupnost.html">Akadálymentesség</a></li>
         </ul>
@@ -471,7 +504,7 @@
   <img alt="">
 </div>
 <div class="sticky-cta" id="sticky-cta" hidden>
-  <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=Csatlakozom%20a%20b%C3%A9ta%20teszthez%20%5Blista%5D" data-zajem="beta" data-zdroj="lista-beta">Csatlakozom a béta teszthez</a>
+  <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="lista-beta">Csatlakozom a béta teszthez</a>
 </div>
 <script src="/main.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "817981b99ad84510902c8529195bf2ae"}'></script><!-- End Cloudflare Web Analytics -->

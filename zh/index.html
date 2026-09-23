@@ -153,8 +153,8 @@
     <p class="tag">家庭平台跳跃游戏：10 个地区共 100 个关卡、小恐龙伙伴 Dráček，以及有旁白朗读的故事。</p>
     <ul class="badges" aria-label="我们所有游戏的共同点"><li>无广告</li><li>无内购</li><li>可离线游玩</li><li>一次性授权</li></ul>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=%E5%8A%A0%E5%85%A5%E6%B5%8B%E8%AF%95%20%5Bhero%5D" data-zajem="beta" data-zdroj="hero-beta">加入测试</a>
-      <a class="btn btn-ghost" href="mailto:info@alexandersoft.net?subject=%E5%8F%91%E5%94%AE%E6%97%B6%E9%80%9A%E7%9F%A5%E6%88%91%20%5Bhero%5D" data-zajem="vydani" data-zdroj="hero-vydani">发售时通知我</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="hero-beta">加入测试</a>
+      <a class="btn btn-ghost" href="#zajem" data-zajem="vydani" data-zdroj="hero-vydani">发售时通知我</a>
     </div>
   </div>
 </section>
@@ -171,7 +171,39 @@
 <script>try{if(localStorage.getItem('as-rezim')==='software'){document.getElementById('rezim-software').checked=true}}catch(e){}</script>
 
 <div class="panel-hry">
-
+<section class="zajem" id="zajem" aria-labelledby="zajem-title">
+  <div class="wrap zajem-box">
+    <div class="zajem-intro">
+      <span class="eyebrow">测试与发售</span>
+      <h2 id="zajem-title">抢先体验</h2>
+      <p class="lead">请留下您的邮箱。我们只会在测试或游戏发售时联系您，不会发送其他内容。</p>
+      <p class="zajem-age">未满 15 岁？请由家长来报名。</p>
+    </div>
+    <noscript><p class="form-noscript">此表单需要 JavaScript。请直接写信至 <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>。</p></noscript>
+    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="提交中……" data-success="谢谢，您已登记。我们会通过邮件联系您。" data-error="登记失败，请重试，或直接写信至 info@alexandersoft.net。">
+      <fieldset>
+        <legend>您想要</legend>
+        <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>我想参加测试</span></label>
+        <label class="check" for="zajem-vydani"><input type="radio" id="zajem-vydani" name="typ" value="vydani"><span>只需在游戏发售时通知我</span></label>
+      </fieldset>
+      <div class="form-row">
+        <label for="zajem-email">电子邮箱</label>
+        <input type="email" id="zajem-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="zajem-jazyk">您希望我们用哪种语言联系您</label>
+        <select id="zajem-jazyk" name="jazyk"><option value="cs" lang="cs">Čeština</option><option value="en" lang="en">English</option><option value="sk" lang="sk">Slovenčina</option><option value="pl" lang="pl">Polski</option><option value="de" lang="de">Deutsch</option><option value="hu" lang="hu">Magyar</option><option value="es" lang="es">Español</option><option value="ru" lang="ru">Русский</option><option value="zh" lang="zh-Hans" selected>简体中文</option></select>
+      </div>
+      <div class="form-row form-row-hp" aria-hidden="true">
+        <label for="zajem-hp">请将此字段留空</label>
+        <input type="text" id="zajem-hp" name="hp" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="check" for="zajem-souhlas"><input type="checkbox" id="zajem-souhlas" name="souhlas" required><span>我同意保存我的邮箱和语言，并同意工作室就测试或游戏发售与我联系。我可以随时撤回同意，每封邮件都会附有退订链接。详情见<a href="/zh/pravni.html#zajem">法律信息</a>。</span></label>
+      <div class="form-status" id="zajem-status" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-primary">提交</button>
+    </form>
+  </div>
+</section>
 
 <section class="audience" aria-labelledby="audience-title">
   <div class="wrap">
@@ -304,8 +336,8 @@
   <div class="wrap">
     <h2 id="cta-band-title">想更早玩到我们的游戏吗？成为测试玩家</h2>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=%E5%8A%A0%E5%85%A5%E6%B5%8B%E8%AF%95%20%5Bpas%5D" data-zajem="beta" data-zdroj="pas-beta">加入测试</a>
-      <a class="btn btn-secondary" href="mailto:info@alexandersoft.net?subject=%E5%8F%91%E5%94%AE%E6%97%B6%E9%80%9A%E7%9F%A5%E6%88%91%20%5Bpas%5D" data-zajem="vydani" data-zdroj="pas-vydani">发售时通知我</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="pas-beta">加入测试</a>
+      <a class="btn btn-secondary" href="#zajem" data-zajem="vydani" data-zdroj="pas-vydani">发售时通知我</a>
     </div>
   </div>
 </section>
@@ -437,7 +469,7 @@
         <p>家庭游戏与定制软件——无广告、无内购、无追踪 Cookie。</p>
         <p>运营方: AlexanderSoft，捷克独立游戏工作室<br>卖方的完整身份信息将在开售前补充。</p>
         <p>联系方式: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
-        <p class="beta-note">想更早玩到我们的游戏吗？成为测试玩家： <a href="mailto:info@alexandersoft.net?subject=%E5%8A%A0%E5%85%A5%E6%B5%8B%E8%AF%95%20%5Bpaticka%5D">info@alexandersoft.net</a></p>
+        <p class="beta-note">想更早玩到我们的游戏吗？成为测试玩家： <a href="/zh/#zajem">加入测试</a></p>
       </div>
       <div>
         <h2 class="h4">游戏</h2>
@@ -457,6 +489,7 @@
           <li><a href="/zh/pravni.html#gdpr">隐私保护</a></li>
           <li><a href="/zh/pravni.html#cookies">Cookie</a></li>
           <li><a href="/zh/pravni.html#poptavky">定制软件咨询</a></li>
+          <li><a href="/zh/pravni.html#zajem">测试与发售通知</a></li>
           <li><a href="/zh/pravni.html#kredity">致谢</a></li>
           <li><a href="/zh/pristupnost.html">无障碍</a></li>
         </ul>
@@ -471,7 +504,7 @@
   <img alt="">
 </div>
 <div class="sticky-cta" id="sticky-cta" hidden>
-  <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=%E5%8A%A0%E5%85%A5%E6%B5%8B%E8%AF%95%20%5Blista%5D" data-zajem="beta" data-zdroj="lista-beta">加入测试</a>
+  <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="lista-beta">加入测试</a>
 </div>
 <script src="/main.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "817981b99ad84510902c8529195bf2ae"}'></script><!-- End Cloudflare Web Analytics -->

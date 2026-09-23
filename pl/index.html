@@ -153,8 +153,8 @@
     <p class="tag">Rodzinna platformówka: 100 poziomów w 10 krainach, mały dinozaur Dráček i historia czytana na głos.</p>
     <ul class="badges" aria-label="Co łączy wszystkie nasze gry"><li>Bez reklam</li><li>Bez mikrotransakcji</li><li>Działa offline</li><li>Jednorazowa licencja</li></ul>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=Do%C5%82%C4%85cz%20do%20beta%20test%C3%B3w%20%5Bhero%5D" data-zajem="beta" data-zdroj="hero-beta">Dołącz do beta testów</a>
-      <a class="btn btn-ghost" href="mailto:info@alexandersoft.net?subject=Powiadom%20mnie%20o%20premierze%20%5Bhero%5D" data-zajem="vydani" data-zdroj="hero-vydani">Powiadom mnie o premierze</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="hero-beta">Dołącz do beta testów</a>
+      <a class="btn btn-ghost" href="#zajem" data-zajem="vydani" data-zdroj="hero-vydani">Powiadom mnie o premierze</a>
     </div>
   </div>
 </section>
@@ -171,7 +171,39 @@
 <script>try{if(localStorage.getItem('as-rezim')==='software'){document.getElementById('rezim-software').checked=true}}catch(e){}</script>
 
 <div class="panel-hry">
-
+<section class="zajem" id="zajem" aria-labelledby="zajem-title">
+  <div class="wrap zajem-box">
+    <div class="zajem-intro">
+      <span class="eyebrow">Beta testy i premiera</span>
+      <h2 id="zajem-title">Zagraj jako pierwszy</h2>
+      <p class="lead">Zostaw nam e-mail. Odezwiemy się w sprawie beta testów lub gdy gra wyjdzie, i niczego poza tym nie wyślemy.</p>
+      <p class="zajem-age">Masz mniej niż 15 lat? Niech zgłosi się rodzic.</p>
+    </div>
+    <noscript><p class="form-noscript">Formularz wymaga JavaScriptu. Napisz do nas bezpośrednio na <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
+    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Wysyłamy…" data-success="Dziękujemy, jesteś na liście. Odezwiemy się e-mailem." data-error="Zapis się nie udał. Spróbuj ponownie lub napisz na info@alexandersoft.net.">
+      <fieldset>
+        <legend>Czego chcesz</legend>
+        <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>Chcę dołączyć do beta testów</span></label>
+        <label class="check" for="zajem-vydani"><input type="radio" id="zajem-vydani" name="typ" value="vydani"><span>Wystarczy mi wiadomość o premierze gry</span></label>
+      </fieldset>
+      <div class="form-row">
+        <label for="zajem-email">E-mail</label>
+        <input type="email" id="zajem-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="zajem-jazyk">W jakim języku mamy do Ciebie pisać</label>
+        <select id="zajem-jazyk" name="jazyk"><option value="cs" lang="cs">Čeština</option><option value="en" lang="en">English</option><option value="sk" lang="sk">Slovenčina</option><option value="pl" lang="pl" selected>Polski</option><option value="de" lang="de">Deutsch</option><option value="hu" lang="hu">Magyar</option><option value="es" lang="es">Español</option><option value="ru" lang="ru">Русский</option><option value="zh" lang="zh-Hans">简体中文</option></select>
+      </div>
+      <div class="form-row form-row-hp" aria-hidden="true">
+        <label for="zajem-hp">Zostaw to pole puste</label>
+        <input type="text" id="zajem-hp" name="hp" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="check" for="zajem-souhlas"><input type="checkbox" id="zajem-souhlas" name="souhlas" required><span>Zgadzam się na zapisanie mojego adresu e-mail i języka oraz na to, że studio napisze do mnie w sprawie beta testów lub premiery gry. Zgodę mogę w każdej chwili wycofać; w każdej wiadomości będzie link do wypisania się. Szczegóły w <a href="/pl/pravni.html#zajem">informacjach prawnych</a>.</span></label>
+      <div class="form-status" id="zajem-status" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-primary">Wyślij</button>
+    </form>
+  </div>
+</section>
 
 <section class="audience" aria-labelledby="audience-title">
   <div class="wrap">
@@ -304,8 +336,8 @@
   <div class="wrap">
     <h2 id="cta-band-title">Chcesz grać w nasze gry wcześniej? Zostań betatesterem</h2>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=Do%C5%82%C4%85cz%20do%20beta%20test%C3%B3w%20%5Bpas%5D" data-zajem="beta" data-zdroj="pas-beta">Dołącz do beta testów</a>
-      <a class="btn btn-secondary" href="mailto:info@alexandersoft.net?subject=Powiadom%20mnie%20o%20premierze%20%5Bpas%5D" data-zajem="vydani" data-zdroj="pas-vydani">Powiadom mnie o premierze</a>
+      <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="pas-beta">Dołącz do beta testów</a>
+      <a class="btn btn-secondary" href="#zajem" data-zajem="vydani" data-zdroj="pas-vydani">Powiadom mnie o premierze</a>
     </div>
   </div>
 </section>
@@ -437,7 +469,7 @@
         <p>Gry rodzinne i oprogramowanie na zamówienie – bez reklam, bez mikrotransakcji i bez plików cookie do śledzenia.</p>
         <p>Operator: AlexanderSoft – niezależne czeskie studio gier<br>Pełne dane identyfikacyjne sprzedawcy uzupełnimy przed rozpoczęciem sprzedaży.</p>
         <p>Kontakt: <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a></p>
-        <p class="beta-note">Chcesz grać w nasze gry wcześniej? Zostań betatesterem: <a href="mailto:info@alexandersoft.net?subject=Do%C5%82%C4%85cz%20do%20beta%20test%C3%B3w%20%5Bpaticka%5D">info@alexandersoft.net</a></p>
+        <p class="beta-note">Chcesz grać w nasze gry wcześniej? Zostań betatesterem: <a href="/pl/#zajem">Dołącz do beta testów</a></p>
       </div>
       <div>
         <h2 class="h4">Gra</h2>
@@ -457,6 +489,7 @@
           <li><a href="/pl/pravni.html#gdpr">Ochrona danych osobowych</a></li>
           <li><a href="/pl/pravni.html#cookies">Pliki cookie</a></li>
           <li><a href="/pl/pravni.html#poptavky">Zapytania o oprogramowanie na zamówienie</a></li>
+          <li><a href="/pl/pravni.html#zajem">Beta testy i powiadomienie o premierze</a></li>
           <li><a href="/pl/pravni.html#kredity">Podziękowania</a></li>
           <li><a href="/pl/pristupnost.html">Dostępność</a></li>
         </ul>
@@ -471,7 +504,7 @@
   <img alt="">
 </div>
 <div class="sticky-cta" id="sticky-cta" hidden>
-  <a class="btn btn-primary" href="mailto:info@alexandersoft.net?subject=Do%C5%82%C4%85cz%20do%20beta%20test%C3%B3w%20%5Blista%5D" data-zajem="beta" data-zdroj="lista-beta">Dołącz do beta testów</a>
+  <a class="btn btn-primary" href="#zajem" data-zajem="beta" data-zdroj="lista-beta">Dołącz do beta testów</a>
 </div>
 <script src="/main.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "817981b99ad84510902c8529195bf2ae"}'></script><!-- End Cloudflare Web Analytics -->
