@@ -623,3 +623,6 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
   .sticky-cta :focus-visible { outline-color: var(--sun); }
 }
 .site-footer li a { display: inline-block; padding: .25rem 0; min-height: 24px; }
+
+/* EN nav has a ninth item (3D Assets): keep it on one row just above the mobile-menu breakpoint */
+@media (min-width: 901px) and (max-width: 1100px) { .nav { gap: .75rem; } .nav a { font-size: .9rem; } }

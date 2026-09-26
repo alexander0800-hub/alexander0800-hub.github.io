@@ -1,0 +1,47 @@
+/* 3D asset portfolio page (/en/assets/). Loaded after style.css only on this page. */
+.assets-hero { padding: 64px 0 48px; }
+.assets-hero .eyebrow { color: var(--sun); }
+.assets-hero h1 { max-width: 20ch; }
+.assets-hero .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 2.4rem; align-items: center; }
+.assets-hero p.lead { color: #e0d6c8; margin: 0 0 1.6rem; }
+.hero-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; list-style: none; margin: 0; padding: 0; }
+.hero-tiles li { background: #d9d9d4; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 28px rgba(0, 0, 0, .35); }
+.hero-tiles img { width: 100%; height: auto; }
+.summary { display: flex; flex-wrap: wrap; gap: .8rem 2.4rem; list-style: none; margin: 0; padding: 0; }
+.summary li { display: flex; flex-direction: column; }
+.summary strong { font-family: var(--font-head); font-size: 1.7rem; line-height: 1.1; color: #fff; }
+.summary span { color: #e0d6c8; font-size: .92rem; }
+.assets-hero p.origin-line { margin: 1.6rem 0 0; color: #e0d6c8; max-width: 70ch; font-size: .98rem; }
+
+.aset { padding: clamp(44px, 7vw, 84px) 0; background: var(--paper); }
+.aset + .aset { background: #f4ecdc; }
+.aset-head h2 { margin-bottom: .3em; }
+.aset-head .eyebrow { color: #7a3e0c; }
+.soon { display: inline-block; margin: .4rem 0 0; padding: .35rem 1rem; border-radius: 999px; background: var(--night); color: #fff; font-weight: 800; font-size: .92rem; }
+.overview { margin: 2rem 0 0; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); background: #cdcdcd; }
+.overview img { width: 100%; height: auto; }
+.aset h3 { margin: 2.4rem 0 .4rem; font-size: 1.5rem; color: var(--bark); }
+.click-note { margin: 0 0 1rem; color: var(--muted); font-size: .95rem; }
+.model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.model-grid a { display: block; text-decoration: none; color: var(--ink); background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 16px rgba(59, 36, 23, .12); height: 100%; }
+.model-grid img { width: 100%; height: auto; aspect-ratio: 1; background: #d9d9d4; transition: transform .3s ease; }
+.model-grid a:hover img { transform: scale(1.04); }
+.model-grid span { display: block; padding: .6rem .8rem .8rem; font-weight: 700; font-size: .95rem; line-height: 1.3; }
+.model-grid a:focus-visible { outline: 3px solid #7a3e0c; outline-offset: 2px; }
+.specs { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.6rem; margin: 0; max-width: 900px; }
+.specs dt { font-weight: 800; color: var(--bark); }
+.specs dd { margin: 0; }
+.origin { margin: 1.6rem 0 0; padding: .9rem 1.1rem; border-left: 4px solid var(--sun-deep); background: rgba(255, 255, 255, .7); max-width: 70ch; }
+.about { padding: clamp(44px, 6vw, 72px) 0; background: var(--paper); }
+.about p { max-width: 72ch; }
+.about a { color: #8a4610; }
+.assets-page .lightbox img { background: #d9d9d4; }
+@media (max-width: 760px) {
+  .overview { display: none; } /* the wide sheet is unreadable at phone width; the model grid below shows every model */
+  .model-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+  .specs { grid-template-columns: 1fr; gap: 0; }
+  .specs dt { margin-top: .7rem; }
+  .assets-hero { padding: 40px 0 32px; }
+  .assets-hero .wrap { grid-template-columns: 1fr; }
+  .hero-tiles { display: none; }
+}

@@ -50,7 +50,7 @@
     const close = $('button', box);
     let opener = null;
     const hide = () => { box.hidden = true; img.removeAttribute('src'); if (opener) opener.focus(); };
-    $$('.gallery-grid a').forEach((a) => a.addEventListener('click', (e) => {
+    $$('.gallery-grid a, .model-grid a').forEach((a) => a.addEventListener('click', (e) => {
       e.preventDefault();
       opener = a;
       img.src = a.getAttribute('href');
