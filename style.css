@@ -571,7 +571,7 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
 .poptavka-form .form-row { display: grid; gap: .4rem; }
 .poptavka-form label { font-weight: 700; color: var(--bark); }
 .poptavka-form input[type="text"], .poptavka-form input[type="email"], .poptavka-form select, .poptavka-form textarea {
-  font: inherit; padding: .65rem .75rem; border-radius: .6rem; border: 1px solid #c9b39b; background: #fff; color: var(--ink); width: 100%;
+  font: inherit; padding: .65rem .75rem; border-radius: .6rem; border: 1px solid #9a8069; background: #fff; color: var(--ink); width: 100%;
 }
 .poptavka-form input:focus-visible, .poptavka-form select:focus-visible, .poptavka-form textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
 .poptavka-form textarea { resize: vertical; }
