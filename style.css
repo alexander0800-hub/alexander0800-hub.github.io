@@ -626,3 +626,16 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
 .poptavka-form [aria-invalid="true"] { border-color: #a1261b; box-shadow: 0 0 0 1px #a1261b; }
 .check input[aria-invalid="true"] { border-color: #a1261b; }
 .btn[aria-disabled="true"] { opacity: .75; cursor: progress; }
+
+/* Mobil (≤ 760 px): cíle dotyku min. 44 × 44 px a text min. 16 px (audit 2, měřeno v Chromiu na 360 px).
+   Odkazy uvnitř běžného textu (WCAG 2.5.8 výjimka „inline“) se nezvětšují; samostatné odkazy mají třídu .odkaz-blok. */
+@media (max-width: 760px) {
+  .logo, .lang summary, .lang li a, .nav a, .site-footer li a, .toc a, .odkaz-blok { min-height: 44px; }
+  .nav a, .site-footer li a, .toc a, .odkaz-blok { min-width: 44px; }
+  .logo, .lang summary, .nav a { display: flex; align-items: center; }
+  .site-footer li a, .toc a, .odkaz-blok { display: inline-flex; align-items: center; }
+  .toc li { margin: 0; }
+  .site-footer, .badges li, .lang summary, .beta-note, .copyright, .eyebrow, .legal small, .software-note,
+  .project .moznosti, .project p, .project .state, .gallery-grid figcaption, .cast span, .fineprint,
+  .software .modules-grid p, .price-planned, .price-card .ribbon { font-size: 1rem; }
+}
