@@ -181,7 +181,7 @@
       <p class="zajem-age">Under 15? Ask a parent to sign up for you.</p>
     </div>
     <noscript><p class="form-noscript">The form needs JavaScript. Please write to us directly at <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Sending…" data-success="Thank you, you are on the list. We will be in touch by email." data-error="Signing up failed. Please try again, or write to info@alexandersoft.net.">
+    <form class="poptavka-form zajem-form" id="zajem-form" data-err-required="Please fill in this field." data-err-email="Please enter a valid email address, for example name@example.com." data-err-consent="We can’t send the form without your consent." data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Sending…" data-success="Thank you, you are on the list. We will be in touch by email." data-error="Signing up failed. Please try again, or write to info@alexandersoft.net.">
       <fieldset>
         <legend>What would you like</legend>
         <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>I want to join the beta test</span></label>
@@ -416,7 +416,7 @@
     <h2 id="poptavka-title">Have a custom project?</h2>
     <p class="lead">We're just starting out with custom development, so this inquiry is no-obligation – for you and for us. Write to us about what you need, and we'll get back to you within 5 business days.</p>
     <noscript><p class="form-noscript">The inquiry form requires JavaScript. Please write to us directly at <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form" id="poptavka-form" data-sending="Sending…" data-success="Thank you, we've received your inquiry. We'll reply to the given email within 5 business days." data-error="The inquiry could not be sent. Please try again, or write directly to info@alexandersoft.net.">
+    <form class="poptavka-form" id="poptavka-form" data-err-required="Please fill in this field." data-err-email="Please enter a valid email address, for example name@example.com." data-err-consent="We can’t send the form without your consent." data-sending="Sending…" data-success="Thank you, we've received your inquiry. We'll reply to the given email within 5 business days." data-error="The inquiry could not be sent. Please try again, or write directly to info@alexandersoft.net.">
       <div class="form-row">
         <label for="poptavka-jmeno">Name</label>
         <input type="text" id="poptavka-jmeno" name="jmeno" autocomplete="name" required>

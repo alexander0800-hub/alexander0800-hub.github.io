@@ -180,7 +180,7 @@
       <p class="zajem-age">¿Tienes menos de 15 años? Que se apunte tu madre, tu padre o tu tutor.</p>
     </div>
     <noscript><p class="form-noscript">El formulario necesita JavaScript. Escríbenos directamente a <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Enviando…" data-success="Gracias, ya estás en la lista. Te escribiremos por correo." data-error="No se pudo completar la inscripción. Inténtalo de nuevo o escribe a info@alexandersoft.net.">
+    <form class="poptavka-form zajem-form" id="zajem-form" data-err-required="Rellena este campo, por favor." data-err-email="Escribe un correo electrónico válido, por ejemplo nombre@example.com." data-err-consent="Sin tu consentimiento no podemos enviar el formulario." data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Enviando…" data-success="Gracias, ya estás en la lista. Te escribiremos por correo." data-error="No se pudo completar la inscripción. Inténtalo de nuevo o escribe a info@alexandersoft.net.">
       <fieldset>
         <legend>¿Qué quieres?</legend>
         <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>Quiero unirme a la beta</span></label>
@@ -415,7 +415,7 @@
     <h2 id="poptavka-title">¿Tienes un proyecto a medida?</h2>
     <p class="lead">Estamos empezando ahora con el desarrollo a medida, así que esta consulta no compromete a nada, ni a ti ni a nosotros. Escríbenos lo que necesitas y te responderemos en un plazo de 5 días laborables.</p>
     <noscript><p class="form-noscript">El formulario de consulta necesita JavaScript. Escríbenos directamente a <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form" id="poptavka-form" data-sending="Enviando…" data-success="Gracias, hemos recibido tu consulta. Te responderemos al correo indicado en un plazo de 5 días laborables." data-error="No se ha podido enviar la consulta. Inténtalo de nuevo o escribe directamente a info@alexandersoft.net.">
+    <form class="poptavka-form" id="poptavka-form" data-err-required="Rellena este campo, por favor." data-err-email="Escribe un correo electrónico válido, por ejemplo nombre@example.com." data-err-consent="Sin tu consentimiento no podemos enviar el formulario." data-sending="Enviando…" data-success="Gracias, hemos recibido tu consulta. Te responderemos al correo indicado en un plazo de 5 días laborables." data-error="No se ha podido enviar la consulta. Inténtalo de nuevo o escribe directamente a info@alexandersoft.net.">
       <div class="form-row">
         <label for="poptavka-jmeno">Nombre</label>
         <input type="text" id="poptavka-jmeno" name="jmeno" autocomplete="name" required>

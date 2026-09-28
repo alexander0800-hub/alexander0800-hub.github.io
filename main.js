@@ -80,6 +80,60 @@
     if (swRadio) swRadio.checked = true;
   }
 
+  // Accessible form validation: messages in the page language (data-err-* on the form), linked to each field
+  // via aria-describedby and aria-invalid, focus moves to the first invalid field. The browser's own bubbles
+  // (in the browser's language, not linked to the field) are switched off only when this script runs.
+  const setError = (form, el, text) => {
+    const id = el.id + '-chyba';
+    let msg = document.getElementById(id);
+    const ids = (el.getAttribute('aria-describedby') || '').split(' ').filter((x) => x && x !== id);
+    if (text) {
+      if (!msg) {
+        msg = document.createElement('p');
+        msg.id = id;
+        msg.className = 'field-error';
+        const row = el.closest('.form-row');
+        if (row) row.appendChild(msg); else (el.closest('label') || el).after(msg);
+      }
+      msg.textContent = text;
+      el.setAttribute('aria-invalid', 'true');
+      ids.push(id);
+    } else {
+      if (msg) msg.remove();
+      el.removeAttribute('aria-invalid');
+    }
+    if (ids.length) el.setAttribute('aria-describedby', ids.join(' ')); else el.removeAttribute('aria-describedby');
+  };
+  const fieldError = (form, el) => {
+    if (el.checkValidity()) return '';
+    if (el.type === 'checkbox') return form.dataset.errConsent;
+    return el.validity.typeMismatch ? form.dataset.errEmail : form.dataset.errRequired;
+  };
+  const fields = (form) => $$('input, select, textarea', form).filter((el) => el.willValidate && el.id && !el.closest('.form-row-hp'));
+  const checkForm = (form) => {
+    if (!form.dataset.errRequired) return form.reportValidity();
+    let first = null;
+    fields(form).forEach((el) => {
+      const text = fieldError(form, el);
+      setError(form, el, text);
+      if (text && !first) first = el;
+    });
+    if (first) { first.focus(); return false; }
+    return true;
+  };
+  $$('form[data-err-required]').forEach((form) => {
+    form.noValidate = true;
+    // Once a field has been flagged, keep its message in sync while the visitor fixes it.
+    const recheck = (e) => { const el = e.target; if (el.getAttribute && el.getAttribute('aria-invalid') === 'true') setError(form, el, fieldError(form, el)); };
+    form.addEventListener('input', recheck);
+    form.addEventListener('change', recheck);
+  });
+  // While sending, the submit button is marked aria-disabled instead of disabled, so keyboard focus stays on it.
+  const busy = (form, btn, on) => {
+    if (on) { btn.setAttribute('aria-disabled', 'true'); form.setAttribute('aria-busy', 'true'); }
+    else { btn.removeAttribute('aria-disabled'); form.removeAttribute('aria-busy'); }
+  };
+
   // Software inquiry form ("nezávazná poptávka") -> Cloudflare Worker.
   const poptavka = $('#poptavka-form');
   if (poptavka) {
@@ -87,7 +141,8 @@
     const btn = $('button[type="submit"]', poptavka);
     poptavka.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!poptavka.reportValidity()) return;
+      if (btn.getAttribute('aria-disabled') === 'true') return;
+      if (!checkForm(poptavka)) return;
       const fd = new FormData(poptavka);
       const payload = {
         jmeno: fd.get('jmeno') || '',
@@ -100,7 +155,7 @@
         souhlas: !!fd.get('souhlas'),
         hp: fd.get('hp') || '',
       };
-      btn.disabled = true;
+      busy(poptavka, btn, true);
       status.textContent = poptavka.dataset.sending;
       // text/plain (not application/json): the Worker still reads it as JSON, but a "simple" content-type
       // avoids a CORS preflight (OPTIONS) request for this cross-origin POST.
@@ -115,7 +170,7 @@
         poptavka.reset();
       }).catch(() => {
         status.textContent = poptavka.dataset.error;
-      }).finally(() => { btn.disabled = false; });
+      }).finally(() => busy(poptavka, btn, false));
     });
   }
 
@@ -156,7 +211,8 @@
     if (location.hash === '#zajem') showGames();
     zajem.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!zajem.reportValidity()) return;
+      if (btn.getAttribute('aria-disabled') === 'true') return;
+      if (!checkForm(zajem)) return;
       const fd = new FormData(zajem);
       const payload = {
         email: fd.get('email') || '',
@@ -168,7 +224,7 @@
         souhlasVerze: 'zajem-2026-09-23',
         hp: fd.get('hp') || '',
       };
-      btn.disabled = true;
+      busy(zajem, btn, true);
       status.classList.remove('ok');
       status.textContent = zajem.dataset.sending;
       // text/plain: "simple" content-type, no CORS preflight (same as the inquiry form).
@@ -181,7 +237,7 @@
           zajem.reset();
         })
         .catch(() => { status.textContent = zajem.dataset.error; })
-        .finally(() => { btn.disabled = false; });
+        .finally(() => busy(zajem, btn, false));
     });
   }
 
@@ -193,7 +249,8 @@
     const btn = $('button[type="submit"]', klub);
     klub.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!klub.reportValidity()) return;
+      if (btn.getAttribute('aria-disabled') === 'true') return;
+      if (!checkForm(klub)) return;
       const fd = new FormData(klub);
       const payload = {
         email: fd.get('email') || '',
@@ -203,7 +260,7 @@
         hp: fd.get('hp') || '',
         turnstile: fd.get('cf-turnstile-response') || '',
       };
-      btn.disabled = true;
+      busy(klub, btn, true);
       status.classList.remove('ok');
       status.textContent = klub.dataset.sending;
       fetch(klub.dataset.endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) })
@@ -215,7 +272,7 @@
           klub.reset();
         })
         .catch(() => { status.textContent = klub.dataset.error; })
-        .finally(() => { btn.disabled = false; });
+        .finally(() => busy(klub, btn, false));
     });
   }
 })();

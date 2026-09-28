@@ -180,7 +180,7 @@
       <p class="zajem-age">Тебе меньше 15 лет? Пусть зарегистрируется родитель.</p>
     </div>
     <noscript><p class="form-noscript">Для формы нужен JavaScript. Напишите нам напрямую на <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Отправляем…" data-success="Спасибо, вы в списке. Мы свяжемся с вами по e-mail." data-error="Не удалось оформить заявку. Попробуйте ещё раз или напишите на info@alexandersoft.net.">
+    <form class="poptavka-form zajem-form" id="zajem-form" data-err-required="Пожалуйста, заполните это поле." data-err-email="Введите корректный адрес электронной почты, например name@example.com." data-err-consent="Без вашего согласия мы не можем отправить форму." data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Отправляем…" data-success="Спасибо, вы в списке. Мы свяжемся с вами по e-mail." data-error="Не удалось оформить заявку. Попробуйте ещё раз или напишите на info@alexandersoft.net.">
       <fieldset>
         <legend>Что вы хотите</legend>
         <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>Хочу участвовать в бета-тесте</span></label>
@@ -415,7 +415,7 @@
     <h2 id="poptavka-title">Есть проект на заказ?</h2>
     <p class="lead">Заказную разработку мы только начинаем, поэтому эта заявка ни к чему не обязывает — ни вас, ни нас. Напишите, что вам нужно, и мы ответим в течение 5 рабочих дней.</p>
     <noscript><p class="form-noscript">Для формы заявки требуется JavaScript. Напишите нам напрямую на <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form" id="poptavka-form" data-sending="Отправляем…" data-success="Спасибо, мы получили вашу заявку. Ответим на указанный адрес в течение 5 рабочих дней." data-error="Не удалось отправить заявку. Попробуйте ещё раз или напишите напрямую на info@alexandersoft.net.">
+    <form class="poptavka-form" id="poptavka-form" data-err-required="Пожалуйста, заполните это поле." data-err-email="Введите корректный адрес электронной почты, например name@example.com." data-err-consent="Без вашего согласия мы не можем отправить форму." data-sending="Отправляем…" data-success="Спасибо, мы получили вашу заявку. Ответим на указанный адрес в течение 5 рабочих дней." data-error="Не удалось отправить заявку. Попробуйте ещё раз или напишите напрямую на info@alexandersoft.net.">
       <div class="form-row">
         <label for="poptavka-jmeno">Имя</label>
         <input type="text" id="poptavka-jmeno" name="jmeno" autocomplete="name" required>

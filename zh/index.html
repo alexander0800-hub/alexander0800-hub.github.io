@@ -180,7 +180,7 @@
       <p class="zajem-age">未满 15 岁？请由家长来报名。</p>
     </div>
     <noscript><p class="form-noscript">此表单需要 JavaScript。请直接写信至 <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>。</p></noscript>
-    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="提交中……" data-success="谢谢，您已登记。我们会通过邮件联系您。" data-error="登记失败，请重试，或直接写信至 info@alexandersoft.net。">
+    <form class="poptavka-form zajem-form" id="zajem-form" data-err-required="请填写此项。" data-err-email="请输入有效的电子邮件地址，例如 name@example.com。" data-err-consent="未经您的同意，我们无法提交表单。" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="提交中……" data-success="谢谢，您已登记。我们会通过邮件联系您。" data-error="登记失败，请重试，或直接写信至 info@alexandersoft.net。">
       <fieldset>
         <legend>您想要</legend>
         <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>我想参加测试</span></label>
@@ -415,7 +415,7 @@
     <h2 id="poptavka-title">有定制项目吗？</h2>
     <p class="lead">定制开发我们才刚刚起步，所以这次咨询不具约束力——对您和对我们都是如此。请告诉我们您的需求，我们会在 5 个工作日内回复。</p>
     <noscript><p class="form-noscript">咨询表单需要 JavaScript 才能运行。请直接写信至 <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>。</p></noscript>
-    <form class="poptavka-form" id="poptavka-form" data-sending="发送中……" data-success="感谢您，我们已收到您的咨询。我们将在 5 个工作日内回复您提供的邮箱。" data-error="咨询发送失败，请重试，或直接写信至 info@alexandersoft.net。">
+    <form class="poptavka-form" id="poptavka-form" data-err-required="请填写此项。" data-err-email="请输入有效的电子邮件地址，例如 name@example.com。" data-err-consent="未经您的同意，我们无法提交表单。" data-sending="发送中……" data-success="感谢您，我们已收到您的咨询。我们将在 5 个工作日内回复您提供的邮箱。" data-error="咨询发送失败，请重试，或直接写信至 info@alexandersoft.net。">
       <div class="form-row">
         <label for="poptavka-jmeno">姓名</label>
         <input type="text" id="poptavka-jmeno" name="jmeno" autocomplete="name" required>
