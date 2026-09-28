@@ -617,3 +617,6 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
 
 /* EN nav has a ninth item (3D Assets): keep it on one row just above the mobile-menu breakpoint */
 @media (min-width: 901px) and (max-width: 1100px) { .nav { gap: .75rem; } .nav a { font-size: .9rem; } }
+
+/* 1.4.11 / 2.4.7: tmavý fokus --focus (#7a3e0c) má na tmavém pozadí jen ~2 : 1 – světlý obrys i v hero, 404, lightboxu a tmavých boxech */
+.hero :focus-visible, .notfound :focus-visible, .lightbox :focus-visible, .legal-hero :focus-visible, .dub-box :focus-visible, .project.featured :focus-visible { outline-color: var(--sun); }
