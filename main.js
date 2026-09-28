@@ -184,4 +184,38 @@
         .finally(() => { btn.disabled = false; });
     });
   }
+
+  // Klub AlexanderSoft "brzy" signup (site/klub.json formReady): same pattern as the zajem form above,
+  // just e-mail + consent (+ Turnstile once CEO deploys the sitekey). Rendered only when formReady is on.
+  const klub = $('#klub-form');
+  if (klub) {
+    const status = $('#klub-status', klub);
+    const btn = $('button[type="submit"]', klub);
+    klub.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!klub.reportValidity()) return;
+      const fd = new FormData(klub);
+      const payload = {
+        email: fd.get('email') || '',
+        stranka: document.documentElement.lang || '',
+        souhlas: !!fd.get('souhlas'),
+        souhlasVerze: 'klub-2026-09-28',
+        hp: fd.get('hp') || '',
+        turnstile: fd.get('cf-turnstile-response') || '',
+      };
+      btn.disabled = true;
+      status.classList.remove('ok');
+      status.textContent = klub.dataset.sending;
+      fetch(klub.dataset.endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) })
+        .then(async (r) => {
+          const data = await r.json().catch(() => null);
+          if (!r.ok) { status.textContent = (data && data.zprava) || klub.dataset.error; return; }
+          status.textContent = klub.dataset.success;
+          status.classList.add('ok');
+          klub.reset();
+        })
+        .catch(() => { status.textContent = klub.dataset.error; })
+        .finally(() => { btn.disabled = false; });
+    });
+  }
 })();
