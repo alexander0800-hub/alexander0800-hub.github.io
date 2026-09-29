@@ -26,10 +26,10 @@
 <meta property="og:image" content="https://www.alexandersoft.net/img/og/og-clovicek-hd.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Človíček y el mamut Chlupáč hacen las paces con un bisonte gigante">
+<meta property="og:image:alt" content="Človíček salta entre plataformas junto a las mesetas, el logotipo ČlovíčekHD">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="/img/hero_hory-1440.webp" imagesrcset="/img/hero_hory-480.webp 480w, /img/hero_hory-960.webp 960w, /img/hero_hory-1440.webp 1440w, /img/hero_hory-1920.webp 1920w" imagesizes="(max-width: 980px) 220vw, 140vw" type="image/webp">
+<link rel="preload" as="image" href="/img/hero_hory-1440.webp" imagesrcset="/img/hero_hory-480.webp 480w, /img/hero_hory-960.webp 960w, /img/hero_hory-1440.webp 1440w, /img/hero_hory-1920.webp 1920w" imagesizes="(max-width: 980px) 220vw, (min-aspect-ratio: 3/2) 104vw, 130vw" type="image/webp">
 <link rel="stylesheet" href="/style.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
@@ -68,10 +68,7 @@
    }
   },
   {
-   "@type": [
-    "VideoGame",
-    "Product"
-   ],
+   "@type": "VideoGame",
    "@id": "https://www.alexandersoft.net/#clovicek-hd",
    "name": "ČlovíčekHD",
    "alternateName": "ČlovíčekHD – Episodio I: Človíček y Človíčková",
@@ -82,8 +79,10 @@
     "Adventure"
    ],
    "gamePlatform": [
-    "PC"
+    "Windows 10",
+    "Windows 11"
    ],
+   "operatingSystem": "Windows 10, Windows 11 (x64)",
    "playMode": "SinglePlayer",
    "inLanguage": [
     "cs",
@@ -106,10 +105,20 @@
    "publisher": {
     "@id": "https://www.alexandersoft.net/#org"
    },
-   "brand": {
-    "@type": "Brand",
-    "name": "AlexanderSoft"
-   }
+   "offers": [
+    {
+     "@type": "Offer",
+     "price": "249",
+     "priceCurrency": "CZK",
+     "description": "Precio previsto en el lanzamiento"
+    },
+    {
+     "@type": "Offer",
+     "price": "9.99",
+     "priceCurrency": "EUR",
+     "description": "Precio previsto en el lanzamiento"
+    }
+   ]
   }
  ]
 }
@@ -146,7 +155,7 @@
 <main id="obsah">
 
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero-bg"><img src="/img/hero_hory-1920.webp" srcset="/img/hero_hory-480.webp 480w, /img/hero_hory-960.webp 960w, /img/hero_hory-1440.webp 1440w, /img/hero_hory-1920.webp 1920w" sizes="(max-width: 980px) 220vw, 140vw" width="1920" height="1080" alt="" decoding="async" fetchpriority="high"></div>
+  <div class="hero-bg"><img src="/img/hero_hory-1920.webp" srcset="/img/hero_hory-480.webp 480w, /img/hero_hory-960.webp 960w, /img/hero_hory-1440.webp 1440w, /img/hero_hory-1920.webp 1920w" sizes="(max-width: 980px) 220vw, (min-aspect-ratio: 3/2) 104vw, 130vw" width="1920" height="1080" alt="" decoding="async" fetchpriority="high"></div>
   <div class="wrap">
     <span class="eyebrow eyebrow-light">AlexanderSoft · Lanzamiento en preparación</span>
     <h1 id="hero-title">Človíček<span>HD</span></h1>
@@ -180,7 +189,7 @@
       <p class="zajem-age">¿Tienes menos de 15 años? Que se apunte tu madre, tu padre o tu tutor.</p>
     </div>
     <noscript><p class="form-noscript">El formulario necesita JavaScript. Escríbenos directamente a <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form zajem-form" id="zajem-form" data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Enviando…" data-success="Gracias, ya estás en la lista. Te escribiremos por correo." data-error="No se pudo completar la inscripción. Inténtalo de nuevo o escribe a info@alexandersoft.net.">
+    <form class="poptavka-form zajem-form" id="zajem-form" data-err-required="Rellena este campo, por favor." data-err-email="Escribe un correo electrónico válido, por ejemplo nombre@example.com." data-err-consent="Sin tu consentimiento no podemos enviar el formulario." data-endpoint="https://beta-portal.boss-05d.workers.dev/api/zajem" data-sending="Enviando…" data-success="Gracias, ya estás en la lista. Te escribiremos por correo." data-error="No se pudo completar la inscripción. Inténtalo de nuevo o escribe a info@alexandersoft.net.">
       <fieldset>
         <legend>¿Qué quieres?</legend>
         <label class="check" for="zajem-beta"><input type="radio" id="zajem-beta" name="typ" value="beta" checked><span>Quiero unirme a la beta</span></label>
@@ -223,27 +232,27 @@
     <p class="lead">El Episodio I tiene 100 niveles en 10 regiones y, además, el Sendero de los Ancestros. Cada región tiene su propio fondo pintado, sus trampas y sus enemigos.</p>
     <div class="feature-grid">
       <article class="feature reveal">
-        <img src="/img/level_jeskyne-1920.webp" srcset="/img/level_jeskyne-480.webp 480w, /img/level_jeskyne-960.webp 960w, /img/level_jeskyne-1440.webp 1440w, /img/level_jeskyne-1920.webp 1920w" sizes="(max-width: 760px) 165vw, (max-width: 980px) 82vw, 680px" width="1920" height="1080" alt="Una cueva con estalagmitas, cristales brillantes y una antorcha" decoding="async" loading="lazy">
+        <img src="/img/level_jeskyne-1920.webp" srcset="/img/level_jeskyne-480.webp 480w, /img/level_jeskyne-960.webp 960w, /img/level_jeskyne-1440.webp 1440w, /img/level_jeskyne-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 380px" width="1920" height="1080" alt="Una cueva con estalagmitas, cristales brillantes y una antorcha" decoding="async" loading="lazy">
         <div><h3>100 niveles, 10 regiones</h3><p>Selva, llanuras, pantanos, cuevas, volcanes, el mar y la Fortaleza del Invierno Eterno.</p></div>
       </article>
       <article class="feature reveal">
-        <img src="/img/boss_1-1920.webp" srcset="/img/boss_1-480.webp 480w, /img/boss_1-960.webp 960w, /img/boss_1-1440.webp 1440w, /img/boss_1-1920.webp 1920w" sizes="(max-width: 760px) 165vw, (max-width: 980px) 82vw, 680px" width="1920" height="720" alt="Človíček y el mamut Chlupáč hacen las paces con un bisonte gigante" decoding="async" loading="lazy">
+        <img src="/img/boss_1-1920.webp" srcset="/img/boss_1-480.webp 480w, /img/boss_1-960.webp 960w, /img/boss_1-1440.webp 1440w, /img/boss_1-1920.webp 1920w" sizes="(max-width: 760px) 138vw, (max-width: 980px) 67vw, 570px" width="1920" height="720" alt="Človíček hace las paces con un tigre dientes de sable junto a una cascada en la selva" decoding="async" loading="lazy">
         <div><h3>Jefes con historia</h3><p>Cada capítulo termina con un combate contra un jefe. Y algunos enemigos solo están perdidos.</p></div>
       </article>
       <article class="feature reveal">
-        <img src="/img/boss_4-1920.webp" srcset="/img/boss_4-480.webp 480w, /img/boss_4-960.webp 960w, /img/boss_4-1440.webp 1440w, /img/boss_4-1920.webp 1920w" sizes="(max-width: 760px) 165vw, (max-width: 980px) 82vw, 680px" width="1920" height="720" alt="El grupo con la cría de dinosaurio Dráček en un paisaje nevado" decoding="async" loading="lazy">
+        <img src="/img/boss_4-1920.webp" srcset="/img/boss_4-480.webp 480w, /img/boss_4-960.webp 960w, /img/boss_4-1440.webp 1440w, /img/boss_4-1920.webp 1920w" sizes="(max-width: 760px) 138vw, (max-width: 980px) 67vw, 570px" width="1920" height="720" alt="El grupo con Dráček y Chlupáč hace las paces con un murciélago gigante en una cueva" decoding="async" loading="lazy">
         <div><h3>Dráček, tu compañero</h3><p>Una cría de dinosaurio que crece contigo, aprende nuevas habilidades y adora que la acaricien.</p></div>
       </article>
       <article class="feature reveal">
-        <img src="/img/noc_usak-1920.webp" srcset="/img/noc_usak-480.webp 480w, /img/noc_usak-960.webp 960w, /img/noc_usak-1440.webp 1440w, /img/noc_usak-1920.webp 1920w" sizes="(max-width: 760px) 165vw, (max-width: 980px) 82vw, 680px" width="1920" height="1080" alt="Un nivel nocturno, Človíček pasa a hurtadillas junto a un Orejón dormido" decoding="async" loading="lazy">
+        <img src="/img/noc_usak-1920.webp" srcset="/img/noc_usak-480.webp 480w, /img/noc_usak-960.webp 960w, /img/noc_usak-1440.webp 1440w, /img/noc_usak-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 380px" width="1920" height="1080" alt="Un nivel nocturno, Človíček pasa a hurtadillas junto a un Orejón dormido" decoding="async" loading="lazy">
         <div><h3>Noche y sigilo</h3><p>De noche duermen los Orejones y revolotean Polillas lunares junto a las hogueras. Quien camina en silencio, gana.</p></div>
       </article>
       <article class="feature reveal">
-        <img src="/img/level_utesy-1920.webp" srcset="/img/level_utesy-480.webp 480w, /img/level_utesy-960.webp 960w, /img/level_utesy-1440.webp 1440w, /img/level_utesy-1920.webp 1920w" sizes="(max-width: 760px) 165vw, (max-width: 980px) 82vw, 680px" width="1920" height="1080" alt="Lluvia sobre acantilados marinos con cascadas" decoding="async" loading="lazy">
+        <img src="/img/level_utesy-1920.webp" srcset="/img/level_utesy-480.webp 480w, /img/level_utesy-960.webp 960w, /img/level_utesy-1440.webp 1440w, /img/level_utesy-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 380px" width="1920" height="1080" alt="Acantilados junto al mar con cascadas bajo la luna" decoding="async" loading="lazy">
         <div><h3>Clima y estaciones</h3><p>Lluvia, nieve, hora del día y festividades según el calendario real.</p></div>
       </article>
       <article class="feature reveal">
-        <img src="/img/level_finale-1920.webp" srcset="/img/level_finale-480.webp 480w, /img/level_finale-960.webp 960w, /img/level_finale-1440.webp 1440w, /img/level_finale-1920.webp 1920w" sizes="(max-width: 760px) 165vw, (max-width: 980px) 82vw, 680px" width="1920" height="1080" alt="Človíček ante la helada Fortaleza del Invierno Eterno en una noche de luna" decoding="async" loading="lazy">
+        <img src="/img/level_finale-1920.webp" srcset="/img/level_finale-480.webp 480w, /img/level_finale-960.webp 960w, /img/level_finale-1440.webp 1440w, /img/level_finale-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 380px" width="1920" height="1080" alt="Človíček ante la helada Fortaleza del Invierno Eterno en una noche de luna" decoding="async" loading="lazy">
         <div><h3>Todos pueden jugar</h3><p>Dificultad a elegir, puntos de control, teclas configurables, mando y opciones de accesibilidad.</p></div>
       </article>
     </div>
@@ -285,7 +294,7 @@
       <p>Človíček emprende un viaje por toda la Edad de Piedra para encontrarla. Por el camino enciende hogueras de señales, conoce a amigos que te encantarán y descubre quién está realmente detrás del secuestro.</p>
       <blockquote>«Algunos enemigos solo están perdidos».</blockquote>
     </div>
-    <img src="/img/boss_10-1920.webp" srcset="/img/boss_10-480.webp 480w, /img/boss_10-960.webp 960w, /img/boss_10-1440.webp 1440w, /img/boss_10-1920.webp 1920w" sizes="(max-width: 980px) 92vw, 960px" width="1920" height="720" alt="Todo el grupo hace las paces con un tigre dientes de sable junto a una cascada" decoding="async" loading="lazy">
+    <img src="/img/boss_10-1920.webp" srcset="/img/boss_10-480.webp 480w, /img/boss_10-960.webp 960w, /img/boss_10-1440.webp 1440w, /img/boss_10-1920.webp 1920w" sizes="(max-width: 980px) 92vw, 540px" width="1920" height="720" alt="El grupo ante una fortaleza de hielo y un cristal rojo gigante" decoding="async" loading="lazy">
   </div>
   <div class="wrap cast-wrap">
     <h3 class="cast-title">Personajes</h3>
@@ -305,15 +314,14 @@
     <span class="eyebrow">Galería</span>
     <h2 id="galerie-title">Así se ve el juego</h2>
     <div class="gallery-grid">
-      <figure class="wide"><a href="/img/boss_7-1920.webp"><img src="/img/boss_7-1920.webp" srcset="/img/boss_7-480.webp 480w, /img/boss_7-960.webp 960w, /img/boss_7-1440.webp 1440w, /img/boss_7-1920.webp 1920w" sizes="(max-width: 760px) 165vw, 1040px" width="1920" height="720" alt="El grupo ante una fortaleza de hielo y un enorme cristal rojo" decoding="async" loading="lazy"><figcaption>Fortaleza del Invierno Eterno</figcaption></a></figure>
-      <figure><a href="/img/level_led-1920.webp"><img src="/img/level_led-1920.webp" srcset="/img/level_led-480.webp 480w, /img/level_led-960.webp 960w, /img/level_led-1440.webp 1440w, /img/level_led-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 290px" width="1920" height="1080" alt="Montañas nevadas y un bosque de pinos" decoding="async" loading="lazy"><figcaption>Cumbres nevadas</figcaption></a></figure>
-      <figure><a href="/img/level_prales-1920.webp"><img src="/img/level_prales-1920.webp" srcset="/img/level_prales-480.webp 480w, /img/level_prales-960.webp 960w, /img/level_prales-1440.webp 1440w, /img/level_prales-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 290px" width="1920" height="1080" alt="Una cueva con cristales brillantes" decoding="async" loading="lazy"><figcaption>Cueva de cristal</figcaption></a></figure>
-      <figure><a href="/img/level_poust-1920.webp"><img src="/img/level_poust-1920.webp" srcset="/img/level_poust-480.webp 480w, /img/level_poust-960.webp 960w, /img/level_poust-1440.webp 1440w, /img/level_poust-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 290px" width="1920" height="1080" alt="Človíček salta entre plataformas junto a las mesetas" decoding="async" loading="lazy"><figcaption>Mesetas</figcaption></a></figure>
-      <figure><a href="/img/level_utesy-1920.webp"><img src="/img/level_utesy-1920.webp" srcset="/img/level_utesy-480.webp 480w, /img/level_utesy-960.webp 960w, /img/level_utesy-1440.webp 1440w, /img/level_utesy-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 290px" width="1920" height="1080" alt="Acantilados con cascadas junto al mar bajo la lluvia" decoding="async" loading="lazy"><figcaption>Acantilados</figcaption></a></figure>
-      <figure class="wide"><a href="/img/boss_1-1920.webp"><img src="/img/boss_1-1920.webp" srcset="/img/boss_1-480.webp 480w, /img/boss_1-960.webp 960w, /img/boss_1-1440.webp 1440w, /img/boss_1-1920.webp 1920w" sizes="(max-width: 760px) 165vw, 1040px" width="1920" height="720" alt="Človíček y Chlupáč con un bisonte gigante al atardecer" decoding="async" loading="lazy"><figcaption>Jefe derrotado</figcaption></a></figure>
-      <figure class="wide"><a href="/img/boss_4-1920.webp"><img src="/img/boss_4-1920.webp" srcset="/img/boss_4-480.webp 480w, /img/boss_4-960.webp 960w, /img/boss_4-1440.webp 1440w, /img/boss_4-1920.webp 1920w" sizes="(max-width: 760px) 165vw, 1040px" width="1920" height="720" alt="El grupo con Dráček hace las paces con una criatura de hielo" decoding="async" loading="lazy"><figcaption>Amigos</figcaption></a></figure>
-      <figure><a href="/img/level_sopka-1920.webp"><img src="/img/level_sopka-1920.webp" srcset="/img/level_sopka-480.webp 480w, /img/level_sopka-960.webp 960w, /img/level_sopka-1440.webp 1440w, /img/level_sopka-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 290px" width="1920" height="1080" alt="Un camino nocturno por tierras heladas bajo la luna" decoding="async" loading="lazy"><figcaption>Viaje nocturno</figcaption></a></figure>
-      <figure><a href="/img/noc_usak-1920.webp"><img src="/img/noc_usak-1920.webp" srcset="/img/noc_usak-480.webp 480w, /img/noc_usak-960.webp 960w, /img/noc_usak-1440.webp 1440w, /img/noc_usak-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 290px" width="1920" height="1080" alt="Un nivel nocturno con un Orejón dormido" decoding="async" loading="lazy"><figcaption>Chis, el Orejón duerme</figcaption></a></figure>
+      <figure class="wide"><a href="/img/boss_7-1920.webp"><img src="/img/boss_7-1920.webp" srcset="/img/boss_7-480.webp 480w, /img/boss_7-960.webp 960w, /img/boss_7-1440.webp 1440w, /img/boss_7-1920.webp 1920w" sizes="(max-width: 760px) 138vw, (max-width: 980px) 92vw, 590px" width="1920" height="720" alt="El grupo hace las paces con una criatura roja y espinosa entre volcanes" decoding="async" loading="lazy"><figcaption>Tierra volcánica</figcaption></a></figure>
+      <figure><a href="/img/level_led-1920.webp"><img src="/img/level_led-1920.webp" srcset="/img/level_led-480.webp 480w, /img/level_led-960.webp 960w, /img/level_led-1440.webp 1440w, /img/level_led-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 290px" width="1920" height="1080" alt="Montañas nevadas y un bosque de pinos" decoding="async" loading="lazy"><figcaption>Cumbres nevadas</figcaption></a></figure>
+      <figure><a href="/img/level_prales-1920.webp"><img src="/img/level_prales-1920.webp" srcset="/img/level_prales-480.webp 480w, /img/level_prales-960.webp 960w, /img/level_prales-1440.webp 1440w, /img/level_prales-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 290px" width="1920" height="1080" alt="Selva con cascada y una seta roja" decoding="async" loading="lazy"><figcaption>Selva</figcaption></a></figure>
+      <figure><a href="/img/level_poust-1920.webp"><img src="/img/level_poust-1920.webp" srcset="/img/level_poust-480.webp 480w, /img/level_poust-960.webp 960w, /img/level_poust-1440.webp 1440w, /img/level_poust-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 290px" width="1920" height="1080" alt="Človíček salta entre plataformas junto a las mesetas" decoding="async" loading="lazy"><figcaption>Mesetas</figcaption></a></figure>
+      <figure><a href="/img/level_utesy-1920.webp"><img src="/img/level_utesy-1920.webp" srcset="/img/level_utesy-480.webp 480w, /img/level_utesy-960.webp 960w, /img/level_utesy-1440.webp 1440w, /img/level_utesy-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 290px" width="1920" height="1080" alt="Acantilados junto al mar con cascadas bajo la luna" decoding="async" loading="lazy"><figcaption>Acantilados</figcaption></a></figure>
+      <figure class="wide"><a href="/img/boss_1-1920.webp"><img src="/img/boss_1-1920.webp" srcset="/img/boss_1-480.webp 480w, /img/boss_1-960.webp 960w, /img/boss_1-1440.webp 1440w, /img/boss_1-1920.webp 1920w" sizes="(max-width: 760px) 138vw, (max-width: 980px) 92vw, 590px" width="1920" height="720" alt="Človíček hace las paces con un tigre dientes de sable junto a una cascada en la selva" decoding="async" loading="lazy"><figcaption>Jefe derrotado</figcaption></a></figure>
+      <figure class="wide"><a href="/img/boss_4-1920.webp"><img src="/img/boss_4-1920.webp" srcset="/img/boss_4-480.webp 480w, /img/boss_4-960.webp 960w, /img/boss_4-1440.webp 1440w, /img/boss_4-1920.webp 1920w" sizes="(max-width: 760px) 138vw, (max-width: 980px) 92vw, 590px" width="1920" height="720" alt="El grupo con Dráček y Chlupáč hace las paces con un murciélago gigante en una cueva" decoding="async" loading="lazy"><figcaption>Amigos</figcaption></a></figure>
+      <figure><a href="/img/level_sopka-1920.webp"><img src="/img/level_sopka-1920.webp" srcset="/img/level_sopka-480.webp 480w, /img/level_sopka-960.webp 960w, /img/level_sopka-1440.webp 1440w, /img/level_sopka-1920.webp 1920w" sizes="(max-width: 760px) 92vw, (max-width: 980px) 45vw, 290px" width="1920" height="1080" alt="Človíček entre volcanes humeantes" decoding="async" loading="lazy"><figcaption>Volcanes</figcaption></a></figure>
     </div>
   </div>
 </section>
@@ -360,7 +368,7 @@
     <h2 id="nase-hry-title">Nuestros juegos</h2>
     <p class="lead">ČlovíčekHD es el más avanzado y se acerca a su lanzamiento; los demás proyectos están en desarrollo o en preparación. Los mostraremos cuando luzcan como se merecen.</p>
     <div class="projects" id="pripravujeme">
-      <a class="project flagship reveal" href="#hra"><img src="/img/hero_prales-1920.webp" srcset="/img/hero_prales-480.webp 480w, /img/hero_prales-960.webp 960w, /img/hero_prales-1440.webp 1440w, /img/hero_prales-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 560px" width="1920" height="1080" alt="" decoding="async" loading="lazy"><div><span class="state">Lanzamiento en preparación</span><h3>ČlovíčekHD – Episodio I</h3><p>Plataformas familiar: 100 niveles en 10 regiones, el dinosaurio Dráček y una historia narrada en voz alta.</p></div></a>
+      <a class="project flagship reveal" href="#hra"><img src="/img/hero_prales-1920.webp" srcset="/img/hero_prales-480.webp 480w, /img/hero_prales-960.webp 960w, /img/hero_prales-1440.webp 1440w, /img/hero_prales-1920.webp 1920w" sizes="(max-width: 760px) 80vw, (max-width: 980px) 44vw, 590px" width="1920" height="1080" alt="" decoding="async" loading="lazy"><div><span class="state">Lanzamiento en preparación</span><h3>ČlovíčekHD – Episodio I</h3><p>Plataformas familiar: 100 niveles en 10 regiones, el dinosaurio Dráček y una historia narrada en voz alta.</p></div></a>
       <article class="project featured reveal"><span class="state">En desarrollo</span><h3>ČlovíčekHD – Episodio II: El huevo estelar</h3><p>Del huevo nace Zářka, una pequeña criatura de las estrellas. El Gran Deshielo abre nuevas regiones y el grupo busca siete fragmentos de estrella.</p></article>
 
     </div>
@@ -415,7 +423,7 @@
     <h2 id="poptavka-title">¿Tienes un proyecto a medida?</h2>
     <p class="lead">Estamos empezando ahora con el desarrollo a medida, así que esta consulta no compromete a nada, ni a ti ni a nosotros. Escríbenos lo que necesitas y te responderemos en un plazo de 5 días laborables.</p>
     <noscript><p class="form-noscript">El formulario de consulta necesita JavaScript. Escríbenos directamente a <a href="mailto:info@alexandersoft.net">info@alexandersoft.net</a>.</p></noscript>
-    <form class="poptavka-form" id="poptavka-form" data-sending="Enviando…" data-success="Gracias, hemos recibido tu consulta. Te responderemos al correo indicado en un plazo de 5 días laborables." data-error="No se ha podido enviar la consulta. Inténtalo de nuevo o escribe directamente a info@alexandersoft.net.">
+    <form class="poptavka-form" id="poptavka-form" data-err-required="Rellena este campo, por favor." data-err-email="Escribe un correo electrónico válido, por ejemplo nombre@example.com." data-err-consent="Sin tu consentimiento no podemos enviar el formulario." data-sending="Enviando…" data-success="Gracias, hemos recibido tu consulta. Te responderemos al correo indicado en un plazo de 5 días laborables." data-error="No se ha podido enviar la consulta. Inténtalo de nuevo o escribe directamente a info@alexandersoft.net.">
       <div class="form-row">
         <label for="poptavka-jmeno">Nombre</label>
         <input type="text" id="poptavka-jmeno" name="jmeno" autocomplete="name" required>
@@ -496,7 +504,7 @@
         </ul>
       </div>
     </div>
-    <p class="copyright">© 2026 AlexanderSoft (nombre provisional). Todas las imágenes son capturas de nuestros juegos. Este sitio no usa cookies; medimos las visitas sin cookies mediante Cloudflare Web Analytics.</p>
+    <p class="copyright">© 2026 AlexanderSoft (nombre provisional). Este sitio no usa cookies; medimos las visitas sin cookies mediante Cloudflare Web Analytics.</p>
   </div>
 </footer>
 

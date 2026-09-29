@@ -44,4 +44,5 @@
   .assets-hero { padding: 40px 0 32px; }
   .assets-hero .wrap { grid-template-columns: 1fr; }
   .hero-tiles { display: none; }
+  .summary span, .soon, .click-note, .model-grid span, .assets-hero p.origin-line { font-size: 1rem; } /* text min. 16 px na mobilu */
 }
