@@ -607,6 +607,13 @@ h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; } /* 1.4.10: dlouhá 
 .zajem-form .form-row-hp { display: none; } /* honeypot: display:none, aby ho testy přetečení/1.4.12 nepočítaly (formulář zájmu je vidět v Hry panelu) */
 .legal a.btn-primary { color: var(--bark); text-decoration: none; }
 
+/* news strip on the home page (cs/en) */
+.news-strip { background: #f4ecdc; border-bottom: 1px solid rgba(0,0,0,.08); padding: .7rem 0; }
+.news-strip .wrap { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: baseline; }
+.news-date { font-weight: 800; color: #7a3e0c; }
+.news-strip a { color: #8a4610; font-weight: 700; }
+.news-all { margin-left: auto; font-weight: 400 !important; }
+
 /* ---- Konverze v1.11 balík 2: pás výzvy, sbalené projekty, lepivá lišta, cíle dotyku ---- */
 .cta-band { background: var(--night); color: #fff; padding: clamp(36px, 5vw, 64px) 0; }
 .cta-band h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 1.2rem; }

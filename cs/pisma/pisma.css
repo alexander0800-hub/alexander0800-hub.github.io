@@ -1,0 +1,39 @@
+/* Fonts product page (/cs/pisma/, /en/pisma/). Loaded after style.css only on this page. */
+.pisma-hero { padding: 64px 0 48px; }
+.pisma-hero .eyebrow { color: var(--sun); }
+.pisma-hero h1 { max-width: 20ch; }
+.pisma-hero .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 2.4rem; align-items: center; }
+.pisma-hero p.lead { color: #e0d6c8; margin: 0 0 1.6rem; }
+.pisma-hero .cover { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 28px rgba(0, 0, 0, .35); }
+.pisma-hero .cover img { width: 100%; height: auto; display: block; }
+.summary { display: flex; flex-wrap: wrap; gap: .8rem 2.4rem; list-style: none; margin: 0; padding: 0; }
+.summary li { display: flex; flex-direction: column; }
+.summary strong { font-family: var(--font-head); font-size: 1.7rem; line-height: 1.1; color: #fff; }
+.summary span { color: #e0d6c8; font-size: .92rem; }
+
+.pismo { padding: clamp(44px, 7vw, 84px) 0; background: var(--paper); }
+.pismo + .pismo { background: #f4ecdc; }
+.pismo-head h2 { margin-bottom: .3em; }
+.pismo-head .eyebrow { color: #7a3e0c; }
+.pismo figure { margin: 2rem 0 0; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); background: #cdcdcd; }
+.pismo figure img { width: 100%; height: auto; display: block; }
+
+.diakritika { padding: clamp(44px, 6vw, 72px) 0; background: var(--paper); }
+.diakritika figure { margin: 1.6rem 0 0; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); background: #cdcdcd; }
+.diakritika figure img { width: 100%; height: auto; display: block; }
+
+.specs { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.6rem; margin: 0; max-width: 900px; }
+.specs dt { font-weight: 800; color: var(--bark); }
+.specs dd { margin: 0; }
+.pisma-origin { margin: 1.6rem 0 0; padding: .9rem 1.1rem; border-left: 4px solid var(--sun-deep); background: rgba(255, 255, 255, .7); max-width: 70ch; }
+.pisma-buy { padding: clamp(44px, 6vw, 72px) 0; background: var(--paper); }
+.pisma-buy p { max-width: 72ch; }
+.pisma-buy a { color: #8a4610; }
+
+@media (max-width: 760px) {
+  .pisma-hero { padding: 40px 0 32px; }
+  .pisma-hero .wrap { grid-template-columns: 1fr; }
+  .specs { grid-template-columns: 1fr; gap: 0; }
+  .specs dt { margin-top: .7rem; }
+  .summary span { font-size: 1rem; } /* text min. 16 px na mobilu */
+}

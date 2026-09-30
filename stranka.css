@@ -1,0 +1,17 @@
+.stranka-hero { padding: 64px 0 48px; }
+.stranka-hero .eyebrow { color: var(--sun); }
+.stranka-hero h1 { max-width: 24ch; }
+.stranka-hero p.lead { color: #e0d6c8; margin: 0; max-width: 62ch; }
+.stranka-sekce { padding: clamp(32px, 5vw, 60px) 0; background: var(--paper); }
+.stranka-sekce.alt { background: #f4ecdc; }
+.stranka-sekce p, .stranka-list { max-width: 72ch; }
+.stranka-sekce a:not(.btn) { color: #8a4610; }
+.stranka-list { padding-left: 1.2rem; }
+.stranka-cta { display: flex; flex-wrap: wrap; gap: .8rem; }
+.stranka-cast { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 1.2rem; }
+.stranka-cast li { display: flex; flex-direction: column; gap: .3rem; }
+.stranka-cast img { width: 100%; max-width: 200px; height: auto; border-radius: 14px; }
+.stranka-sekce .specs { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.6rem; margin: 0; max-width: 900px; }
+.stranka-sekce .specs dt { font-weight: 800; color: var(--bark); }
+.stranka-sekce .specs dd { margin: 0; }
+@media (max-width: 760px) { .stranka-hero { padding: 40px 0 32px; } .stranka-sekce .specs { grid-template-columns: 1fr; gap: 0; } .stranka-sekce .specs dt { margin-top: .7rem; } }
