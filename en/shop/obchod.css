@@ -1,0 +1,20 @@
+.obchod-hero { padding: 64px 0 48px; }
+.obchod-hero .eyebrow { color: var(--sun); }
+.obchod-hero h1 { max-width: 20ch; }
+.obchod-hero p.lead { color: #e0d6c8; margin: 0; max-width: 60ch; }
+.obchod-zaruka { padding: clamp(28px, 4vw, 44px) 0; background: #f4ecdc; }
+.obchod-zaruka h2 { margin-bottom: .3em; }
+.obchod-zaruka p { max-width: 72ch; font-size: 1.15rem; margin: 0; }
+.obchod-produkty { padding: clamp(44px, 7vw, 84px) 0; background: var(--paper); }
+.obchod-grid { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.4rem; }
+.obchod-karta { display: flex; flex-direction: column; gap: .6rem; padding: 1.4rem; background: #fff; border-radius: 18px; box-shadow: var(--shadow); }
+.obchod-karta .eyebrow { color: #7a3e0c; }
+.obchod-karta h3 { margin: 0; }
+.obchod-karta p { margin: 0; }
+.obchod-karta .obchod-akce { margin-top: auto; padding-top: .6rem; display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; }
+.obchod-karta a:not(.btn) { color: #8a4610; }
+.obchod-soon { font-weight: 700; color: var(--bark); }
+.obchod-podpora { padding: clamp(44px, 6vw, 72px) 0; background: var(--paper); }
+.obchod-podpora p { max-width: 72ch; }
+.obchod-podpora a { color: #8a4610; }
+@media (max-width: 760px) { .obchod-hero { padding: 40px 0 32px; } }

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /beta/
 
 Sitemap: https://www.alexandersoft.net/sitemap.xml
